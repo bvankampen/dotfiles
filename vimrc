@@ -30,8 +30,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
+" Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'szw/vim-ctrlspace'
+Plugin 'davidhalter/jedi-vim'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -119,7 +120,6 @@ set number
 set showcmd
 set nocursorline
 
-
 set lbr
 set tw=500
 
@@ -129,11 +129,14 @@ set wrap
 
 let g:airline_powerline_fonts=1
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Colorscheme 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let base16colorspace=256
-colorscheme base16-monokai
+if has("win32")
+    colorscheme base16-monokai
+endif
 set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,6 +166,11 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
+map <leader>m :tabn<cr>
+map <leader>n :tabp<cr>
+
+
+map <leader>\ :noh<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -198,3 +206,4 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Misc config
 let NERDTreeIgnore = ['\.pyc$', 'build', 'venv', 'egg', 'egg-info/', 'dist', 'docs']
+let g:jedi#completions_enabled = 1
