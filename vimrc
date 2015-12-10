@@ -7,7 +7,16 @@ set hidden
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if has("win32")
+    set guifont=Hack:h10
+    set rtp+=c:\users\bas\vimfiles\bundle\Vundle.vim
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+endif
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -65,7 +74,9 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 " reload vimrc
-nmap <leader>r :w!<cr>:so %<cr>
+nmap <leader>r :w!<cr>:so $MYVIMRC<cr>
+
+nnoremap <leader>t :NERDTree<CR>
 
 syntax enable
 
@@ -104,12 +115,19 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+set number
+set showcmd
+set nocursorline
+
+
 set lbr
 set tw=500
 
 set ai
 set si
 set wrap
+
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Colorscheme 
@@ -177,3 +195,6 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
+
+" Misc config
+let NERDTreeIgnore = ['\.pyc$', 'build', 'venv', 'egg', 'egg-info/', 'dist', 'docs']
