@@ -28,11 +28,13 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
 " Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'szw/vim-ctrlspace'
+Plugin 'flazz/vim-colorschemes'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -133,10 +135,7 @@ let g:airline_powerline_fonts=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Colorscheme 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let base16colorspace=256
-if has("win32")
-    colorscheme base16-monokai
-endif
+colorscheme Monokai
 set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
