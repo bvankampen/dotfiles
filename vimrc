@@ -33,7 +33,7 @@ Plugin 'bling/vim-airline'
 " Plugin 'powerline/powerline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'szw/vim-ctrlspace'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
 
 " " All of your Plugins must be added before the following line
