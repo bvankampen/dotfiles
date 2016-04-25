@@ -55,7 +55,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+set number
 set laststatus=2
 
 " Sets how many lines of history VIM has to remember
