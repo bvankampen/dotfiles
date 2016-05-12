@@ -206,3 +206,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 " Misc config
 let NERDTreeIgnore = ['\.pyc$', 'build', 'venv', 'egg', 'egg-info/', 'dist', 'docs']
 let g:jedi#completions_enabled = 1
+
+map <C-n> :NERDTreeToggle<CR>
+
