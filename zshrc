@@ -5,7 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gianu"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -87,7 +87,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export TERM=xterm-256color
 export WORKON_HOME=~/Env
-source ~/.local/bin/virtualenvwrapper.sh
+#source ~/.local/bin/virtualenvwrapper.sh
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 
 # key bindings
