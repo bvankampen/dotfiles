@@ -88,8 +88,8 @@ source $ZSH/oh-my-zsh.sh
 # export TERM=xterm-256color
 export WORKON_HOME=~/Env
 #source ~/.local/bin/virtualenvwrapper.sh
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-
+#source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 # key bindings
 bindkey "e[1~" beginning-of-line
@@ -116,3 +116,5 @@ bindkey "e[H" beginning-of-line
 bindkey "e[F" end-of-line
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
+
+alias tmux="tmux -2"
