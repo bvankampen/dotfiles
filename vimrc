@@ -7,15 +7,8 @@ set hidden
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-if has("win32")
-    set guifont=Hack:h10
-    set rtp+=c:\users\bas\vimfiles\bundle\Vundle.vim
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
-else
-    set rtp+=~/.vim/bundle/Vundle.vim
-endif
+set rtp+=~/.vim/bundle/Vundle.vim
+set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline
 
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
