@@ -1,0 +1,34 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/.pyc": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontSize": 14,
+    "python.linting.pylintEnabled": false,
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "editor.dragAndDrop": true,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.colorTheme": "Charcoal Oceanic Next",
+    "workbench.iconTheme": "seti",
+    "editor.fontLigatures": true,
+    "editor.rulers": [79],
+    "editor.lineNumbers": "on",
+    "files.autoSave": "onFocusChange",
+    "editor.renderIndentGuides": true,
+    "editor.renderLineHighlight": "all",
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#313334"
+},
+"workbench.activityBar.visible": true
+}
