@@ -10,19 +10,22 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'klen/python-mode'
     Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'altercation/vim-colors-solarized'
     Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 let g:Powerline_symbols = 'fancy'
 
+let mapleader = ","
+let g:mapleader = ","
+
 if has("gui_running")
-    set guifont=Fira\ Code:h13
+    set guifont=Fira\ Code:h14
 endif
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme OceanicNext
 
 set tabstop=4       " number of columns for a tab
 set shiftwidth=4    " number of columns for reindent operations
@@ -50,6 +53,17 @@ set nofoldenable
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :vim-ident-guide<CR>
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+
 
 augroup myvimrchooks
     au!
