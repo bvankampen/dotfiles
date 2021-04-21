@@ -1,3 +1,5 @@
+set rtp+=~/.local/lib/python3.7/site-packages/powerline/bindings/vim
+
 set mouse-=a
 
 " Don't try to be vi compatible
