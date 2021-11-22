@@ -11,6 +11,7 @@ Plugin 'tomasr/molokai'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()         
 filetype plugin indent on    
@@ -38,3 +39,6 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
