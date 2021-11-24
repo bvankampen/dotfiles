@@ -3,7 +3,10 @@
 #
 
 export PATH=$HOME/code/scripts:$PATH
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/go/bin:$PATH
+
+export GOPATH=$HOME/.local/go
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bas/.oh-my-zsh"
@@ -104,4 +107,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+alias cat="/usr/bin/bat --paging=never"
