@@ -7,6 +7,7 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export GOPATH=/home/bas/dev/go
 export ZSH="/home/bas/.oh-my-zsh"
+export DOCKER_BUILDKIT=1
 
 ZSH_THEME="robbyrussell"
 
@@ -20,7 +21,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-/usr/bin/python3 /home/bas/scripts/Python/update-hosts.py
+#/usr/bin/python3 /home/bas/scripts/Python/update-hosts.py
 
 #autoload -U compinit; compinit
 
