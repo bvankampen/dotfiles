@@ -3,6 +3,7 @@ export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/dev/scripts:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/home/bas/.linkerd2/bin
 
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export GOPATH=/home/bas/dev/go
@@ -17,7 +18,10 @@ plugins=(
 	git
   history
 	zsh-autosuggestions
+  tmux
 )
+
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
