@@ -42,3 +42,6 @@ nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
+
+"Background transparant
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
