@@ -12,15 +12,17 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'bronson/vim-trailing-whitespace'
 
-call vundle#end()         
-filetype plugin indent on    
+call vundle#end()
+filetype plugin indent on
 
 
 set mouse-=a
 set expandtab
 set shiftwidth=2
 set tabstop=2
+set hlsearch
 "set number
 syntax on
 
@@ -45,3 +47,4 @@ map <C-K> :bprev<CR>
 
 "Background transparant
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+
