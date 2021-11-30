@@ -2,12 +2,12 @@
 export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/dev/scripts:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/home/bas/.linkerd2/bin
+export PATH=$PATH:$HOME/.linkerd2/bin
 
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-export GOPATH=/home/bas/dev/go
-export ZSH="/home/bas/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export DOCKER_BUILDKIT=1
 
 ZSH_THEME="robbyrussell"
