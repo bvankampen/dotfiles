@@ -17,6 +17,7 @@ set listchars=tab:▸\ ,trail:·
 set confirm
 set undofile
 set clipboard=unnamedplus
+set signcolumn=yes
 "set number
 syntax on
 
@@ -69,6 +70,7 @@ source ~/.config/vim/fzf.vim
 source ~/.config/vim/vim-trailing-whitespace.vim
 source ~/.config/vim/vim-hcl.vim
 source ~/.config/vim/nerdtree.vim
+source ~/.config/vim/gitgutter.vim
 source ~/.config/vim/molokai.vim
 
 call plug#end()
@@ -84,4 +86,3 @@ colorscheme molokai
 "Background transparant
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi Visual term=reverse cterm=reverse
-
