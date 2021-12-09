@@ -2,7 +2,7 @@
 export PATH=$HOME/.local/bin:/usr/local/bin:$HOME/dev/scripts:$PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/dev/go
+export GOPATH=$HOME/.local/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.linkerd2/bin
 
@@ -28,6 +28,8 @@ source $ZSH/oh-my-zsh.sh
 #/usr/bin/python3 /home/bas/scripts/Python/update-hosts.py
 
 #autoload -U compinit; compinit
+
+source ~/.govc
 
 source <(kubectl completion zsh)
 source <(helm completion zsh)
