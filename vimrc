@@ -5,7 +5,7 @@
 set nocompatible
 filetype off
 
-set mouse-=a
+set mouse=a
 set expandtab
 set shiftwidth=2
 set tabstop=2
@@ -16,9 +16,8 @@ set list
 set listchars=tab:▸\ ,trail:·
 set confirm
 set undofile
-set clipboard=unnamedplus
+set clipboard=unnamed
 set signcolumn=yes
-"set number
 syntax on
 
 set backup
@@ -86,4 +85,5 @@ colorscheme molokai
 
 "Background transparant
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-autocmd vimenter * hi Visual term=reverse cterm=reverse
+autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
+
