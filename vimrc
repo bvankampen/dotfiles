@@ -72,7 +72,8 @@ source ~/.config/vim/vim-hcl.vim
 source ~/.config/vim/nerdtree.vim
 source ~/.config/vim/gitgutter.vim
 source ~/.config/vim/molokai.vim
-source ~/.config/vim/autopairs.vim
+"source ~/.config/vim/autopairs.vim
+source ~/.config/vim/polyglot.vim
 
 call plug#end()
 "doautocmd User PlugLoaded
