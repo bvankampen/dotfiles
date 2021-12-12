@@ -18,6 +18,7 @@ set confirm
 set undofile
 set clipboard=unnamed
 set signcolumn=yes
+set number
 syntax on
 
 set backup
@@ -80,10 +81,17 @@ filetype plugin indent on
 colorscheme molokai
 
 " ***********************************************
-" Misc
+" Colors
 " ***********************************************
 
-"Background transparant
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
+autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
+
+" ***********************************************
+" Filetype Configs
+" ***********************************************
+"
+autocmd Filetype go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
+
 
