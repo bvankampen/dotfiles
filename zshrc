@@ -5,17 +5,17 @@ if command -v docker &> /dev/null; then
   export DOCKER_BUILDKIT=1
 fi
 
-if [ -d /usr/local/go ]; then
+if [[ -d /usr/local/go ]]; then
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=$HOME/.local/go
   export PATH=$PATH:$GOPATH/bin
 fi
 
-if [ -d $HOME/dev/scripts ]; then
+if [[ -d $HOME/dev/scripts ]]; then
   export PATH=$PATH:$HOME/dev/scripts
 fi
 
-if [ -d $HOME/.linkerd2/bin ]; then
+if [[ -d $HOME/.linkerd2/bin ]]; then
   export PATH=$PATH:$HOME/.linkerd2/bin
 fi
 
@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 
 # AUTOCOMPLETES
 
-if [ -f ~/.govc ]; then
+if [[ -f ~/.govc ]]; then
   source ~/.govc
 fi
 
@@ -58,7 +58,7 @@ fi
 
 # ALIASES
 
-if [ -f /usr/bin/batcat ]; then
+if [[ -f /usr/bin/batcat ]]; then
   alias cat="/usr/bin/batcat --paging=never"
 fi
 
