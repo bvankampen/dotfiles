@@ -1,6 +1,7 @@
 " ***********************************************
 " Global Config
 " ***********************************************
+set encoding=UTF-8
 
 set nocompatible
 filetype off
