@@ -1,4 +1,11 @@
 " ***********************************************
+" vim config
+" inspired by:
+"   Jess Archer
+"   (https://github.com/jessarcher/dotfiles)
+" ***********************************************
+
+" ***********************************************
 " Global Config
 " ***********************************************
 set encoding=UTF-8
@@ -73,8 +80,8 @@ source ~/.config/vim/vim-hcl.vim
 source ~/.config/vim/nerdtree.vim
 source ~/.config/vim/gitgutter.vim
 source ~/.config/vim/molokai.vim
-"source ~/.config/vim/autopairs.vim
 source ~/.config/vim/polyglot.vim
+source ~/.config/vim/commentary.vim
 
 call plug#end()
 "doautocmd User PlugLoaded
@@ -95,5 +102,6 @@ autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#46545
 " ***********************************************
 "
 autocmd Filetype go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
+autocmd Filetype markdown setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
 
 
