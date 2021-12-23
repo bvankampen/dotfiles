@@ -27,6 +27,7 @@ set undofile
 set clipboard=unnamed
 set signcolumn=yes
 set number
+set cursorline
 syntax on
 
 set backup
@@ -96,6 +97,8 @@ colorscheme molokai
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
 autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
+autocmd vimenter * hi clear CursorlineNR
+autocmd vimenter * hi Cursorline cterm=bold ctermbg=NONE
 
 " ***********************************************
 " Filetype Configs
