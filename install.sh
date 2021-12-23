@@ -3,13 +3,23 @@
 cd $HOME
 
 if [[ `uname` = 'Linux' ]]; then
-  sudo apt install xclip vim kitty python3-pip
+  sudo apt install vim python3-pip
+fi
+
+ if [[ `uname` = 'Linux' && -d /usr/lib/xsessions ]]; then
+  sudo apt install xclip kitty
   if [[ -d $HOME/.local/share/fonts ]]; then
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
     unzip JetBrainsMono.zip JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete.ttf -d .local/share/fonts
     fc-cache -f
     rm JetBrainsMono.zip
   fi
+fi
+
+# Add current Kubernetes cluster to powerline status
+if command -v kubectl &> /dev/null; then
+  pip install powerk8s
+  ln -sf ~/.dotfiles/powerline ~/.config/powerline
 fi
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
