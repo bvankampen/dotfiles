@@ -40,6 +40,23 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " ***********************************************
+" gVim Setup
+" ***********************************************
+
+if has("gui_running")
+  set lines=48
+  set columns=160
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Cascadia\ Code\ PL:h11:cANSI
+  endif
+endif
+
+
+" ***********************************************
 " Keyboardmappings
 " ***********************************************
 
@@ -98,7 +115,7 @@ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
 autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
 autocmd vimenter * hi clear CursorlineNR
-autocmd vimenter * hi Cursorline cterm=bold ctermbg=NONE
+autocmd vimenter * hi Cursorline cterm=bold ctermbg=NONE guibg=NONE
 
 " ***********************************************
 " Filetype Configs
