@@ -46,6 +46,7 @@ let g:airline_powerline_fonts = 1
 if has("gui_running")
   set lines=48
   set columns=160
+  set guicursor+=a:blinkon0
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
   elseif has("gui_macvim")
