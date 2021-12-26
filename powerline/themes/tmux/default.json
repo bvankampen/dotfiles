@@ -16,6 +16,13 @@
 					}
 			},
 			{
+				"function": "maildir.maildir",
+				"priority": 40,
+				"args": {
+					"inbox": "/Users/bas/Mail/INBOX"
+				}
+			},
+			{
 				"function": "powerline.segments.common.sys.uptime",
 				"priority": 50
 			},

@@ -4,6 +4,7 @@
 			"kubernetes_cluster:alert":   { "fg": "gray10", "bg": "darkestred",  "attrs": [] },
 			"kubernetes_namespace":       { "fg": "gray10", "bg": "darkestblue", "attrs": [] },
 			"kubernetes_namespace:alert": { "fg": "gray10", "bg": "darkred",     "attrs": [] },
-			"kubernetes:divider":         { "fg": "gray4",  "bg": "darkestblue", "attrs": [] }
+			"kubernetes:divider":         { "fg": "gray4",  "bg": "darkestblue", "attrs": [] },
+			"email_alert":					      { "fg": "white", "bg": "darkblue", "attrs": [] }
 		}
 }
