@@ -16,7 +16,7 @@ _IMAPKey = namedtuple('Key', 'username password server port folder use_ssl')
 LOGO: str = "\uf6ed "
 
 class EmailIMAPSegment(KwThreadedSegment):
-	interval = 60
+	interval = 300
 
 	@staticmethod
 	def key(username, password, server='imap.gmail.com', port=IMAP4_SSL_PORT, folder='INBOX', use_ssl=None, **kwargs):
@@ -56,16 +56,10 @@ class EmailIMAPSegment(KwThreadedSegment):
 	def render_one(unread_count, max_msgs=None, **kwargs):
 		if unread_count == None:
 			return []
-		elif type(unread_count) != int or not max_msgs:
-			return [{
-				'contents': f"{LOGO} {unread_count}",
-				'highlight_groups': ['email_alert'],
-			}]
 		else:
 			return [{
 				'contents': f"{LOGO} {unread_count}",
-				'highlight_groups': ['email_alert_gradient', 'email_alert'],
-				'gradient_level': min(unread_count * 100.0 / max_msgs, 100),
+				'highlight_groups': ['email_alert'],
 			}]
 
 
