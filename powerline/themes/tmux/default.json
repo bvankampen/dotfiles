@@ -1,0 +1,54 @@
+{
+	"segments": {
+		"right": [
+			{
+				"function": "powerk8s.powerk8s",
+				"priority": 30,
+				"args": {
+						"show_kube_logo": true,
+						"show_cluster": true,
+						"show_namespace": true,
+						"show_default_namespace": true,
+						"alerts": [
+							"live",
+							"cluster:live"
+						]
+					}
+			},
+			{
+				"function": "mail.email_imap_alert",
+				"priority": 40,
+				"args": {
+					"username": "bas@ping6.nl",
+					"password": "fastmail",
+					"server": "imap.fastmail.com",
+					"port": "993",
+					"use_ssl": true,
+					"folder": "INBOX"
+				}
+			},
+			{
+				"function": "powerline.segments.common.sys.uptime",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.common.sys.system_load",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+			{
+				"function": "powerline.segments.common.net.hostname"
+			}
+		]
+	}
+}

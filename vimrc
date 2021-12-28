@@ -1,4 +1,11 @@
 " ***********************************************
+" vim config
+" inspired by:
+"   Jess Archer
+"   (https://github.com/jessarcher/dotfiles)
+" ***********************************************
+
+" ***********************************************
 " Global Config
 " ***********************************************
 set encoding=UTF-8
@@ -20,6 +27,7 @@ set undofile
 set clipboard=unnamed
 set signcolumn=yes
 set number
+set cursorline
 syntax on
 
 set backup
@@ -30,6 +38,26 @@ set undodir=~/.local/vimtmp//,.
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" ***********************************************
+" gVim Setup
+" ***********************************************
+
+if has("gui_running")
+  set lines=48
+  set columns=160
+  set guicursor+=a:blinkon0
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set macligatures
+    set guifont=JetbrainsMono\ Nerd\ Font:h15
+    set vb t_vb=.
+  elseif has("gui_win32")
+    set guifont=Cascadia\ Code\ PL:h11:cANSI
+  endif
+endif
+
 
 " ***********************************************
 " Keyboardmappings
@@ -73,8 +101,8 @@ source ~/.config/vim/vim-hcl.vim
 source ~/.config/vim/nerdtree.vim
 source ~/.config/vim/gitgutter.vim
 source ~/.config/vim/molokai.vim
-"source ~/.config/vim/autopairs.vim
 source ~/.config/vim/polyglot.vim
+source ~/.config/vim/commentary.vim
 
 call plug#end()
 "doautocmd User PlugLoaded
@@ -89,11 +117,14 @@ colorscheme molokai
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
 autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
+autocmd vimenter * hi clear CursorlineNR
+autocmd vimenter * hi Cursorline cterm=bold ctermbg=NONE guibg=NONE
 
 " ***********************************************
 " Filetype Configs
 " ***********************************************
 "
 autocmd Filetype go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
+autocmd Filetype markdown setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
 
 

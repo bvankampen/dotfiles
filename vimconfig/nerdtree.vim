@@ -1,6 +1,8 @@
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
+if !has("gui_win32")
+    Plug 'ryanoasis/vim-devicons'
+endif 
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 let NERDTreeShowHidden=1
