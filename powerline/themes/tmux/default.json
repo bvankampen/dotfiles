@@ -16,10 +16,15 @@
 					}
 			},
 			{
-				"function": "maildir.maildir",
+				"function": "mail.email_imap_alert",
 				"priority": 40,
 				"args": {
-					"inbox": "/Users/bas/Mail/INBOX"
+					"username": "bas@ping6.nl",
+					"password": "fastmail",
+					"server": "imap.fastmail.com",
+					"port": "993",
+					"use_ssl": true,
+					"folder": "INBOX"
 				}
 			},
 			{

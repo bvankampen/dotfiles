@@ -1,6 +1,7 @@
 {
 	"common": {
 		"term_truecolor": false,
+		"log_file": "~/.cache/powerline.log",
 		"paths": ["~/.config/powerline/segments/"]
 	},
 	"ext": {
