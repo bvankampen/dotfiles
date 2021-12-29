@@ -71,7 +71,11 @@ vnoremap Y myY`y
 
 map gf :edit <cfile><cr>
 
+
 let mapleader = "\<space>"
+
+nnoremap <leader>V :edit ~/.vimrc<CR>
+nnoremap <leader>1 :source ~/.vimrc<CR>
 
 nnoremap <leader><Left> :bprev<CR>
 nnoremap <leader><Right> :bnext<CR>
@@ -79,6 +83,8 @@ nnoremap <leader>n :enew<CR>
 nnoremap <leader>d :bd<CR>
 
 nnoremap q <c-v>
+
+set pastetoggle=<leader>p
 
 " ***********************************************
 " Plugins
@@ -100,6 +106,7 @@ source ~/.config/vim/vim-trailing-whitespace.vim
 source ~/.config/vim/vim-hcl.vim
 source ~/.config/vim/nerdtree.vim
 source ~/.config/vim/gitgutter.vim
+source ~/.config/vim/coc.vim
 source ~/.config/vim/molokai.vim
 source ~/.config/vim/polyglot.vim
 source ~/.config/vim/commentary.vim
