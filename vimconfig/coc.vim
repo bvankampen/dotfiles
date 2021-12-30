@@ -7,6 +7,7 @@ let g:coc_global_extensions = [
     \ 'coc-git',
     \ 'coc-html',
     \ 'coc-json',
+    \ 'coc-diagnostic',
     \ 'coc-sh',
     \ 'coc-snippets',
     \ 'coc-sql',
@@ -42,6 +43,11 @@ endfunction
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Diagnostics Plug
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>z <Plug>(coc-diagnostic-info)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -86,6 +92,8 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+nnoremap <leader>/ :Format<CR>
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
