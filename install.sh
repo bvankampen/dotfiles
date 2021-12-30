@@ -29,9 +29,11 @@ pip install powerline-status
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 mkdir ~/.local/vimtmp
+mkdir ~/.vim
+
 ln -sf ~/.dotfiles/vimconfig ~/.config/vim
 ln -sf ~/.dotfiles/kitty ~/.config/kitty
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
-
+ln -sf ~/.dotfiles/vimconfig/coc-settings.json ~/.vim/coc-settings.json
