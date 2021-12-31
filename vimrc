@@ -17,7 +17,6 @@ set mouse=a
 set expandtab
 set shiftwidth=2
 set tabstop=2
-set hlsearch
 set hidden
 set nowrap
 set list
@@ -85,6 +84,7 @@ nnoremap <leader>d :bd<CR>
 nnoremap q <c-v>
 
 set pastetoggle=<leader>p
+nnoremap <leader>s :set hlsearch!<CR>
 
 " ***********************************************
 " Plugins
