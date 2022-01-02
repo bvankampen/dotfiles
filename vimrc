@@ -27,6 +27,7 @@ set clipboard=unnamed
 set signcolumn=yes
 set number
 set cursorline
+set wrap linebreak
 syntax on
 
 set backup

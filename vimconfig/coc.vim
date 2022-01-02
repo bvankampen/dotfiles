@@ -11,6 +11,7 @@ let g:coc_global_extensions = [
     \ 'coc-sql',
     \ 'coc-go',
     \ 'coc-python',
+    \ 'coc-htmldjango'
 \ ]
 
 let b:coc_pairs_disabled = ["(", "[", "{", "<", "'", "\"", "`"]
