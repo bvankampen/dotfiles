@@ -6,40 +6,6 @@
 " ***********************************************
 
 " ***********************************************
-" Global Config
-" ***********************************************
-set encoding=UTF-8
-
-set nocompatible
-filetype off
-
-set mouse=a
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set hidden
-set nowrap
-set list
-set listchars=tab:▸\ ,trail:·
-set confirm
-set undofile
-set clipboard=unnamed
-set signcolumn=yes
-set number
-set cursorline
-set wrap linebreak
-syntax on
-
-set backup
-
-set backupdir=~/.local/vimtmp//,.
-set directory=~/.local/vimtmp//,.
-set undodir=~/.local/vimtmp//,.
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-" ***********************************************
 " gVim Setup
 " ***********************************************
 
@@ -117,6 +83,41 @@ call plug#end()
 
 filetype plugin indent on
 colorscheme molokai
+
+" ***********************************************
+" Global Config
+" ***********************************************
+set encoding=UTF-8
+
+set nocompatible
+filetype off
+
+set mouse=a
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set hidden
+set nowrap
+set list
+set listchars=tab:▸\ ,trail:·
+set confirm
+set undofile
+set clipboard=unnamed
+set signcolumn=yes
+set number
+set cursorline
+set wrap linebreak
+syntax on
+
+set backup
+
+set backupdir=~/.local/vimtmp//,.
+set directory=~/.local/vimtmp//,.
+set undodir=~/.local/vimtmp//,.
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 
 " ***********************************************
 " Colors
