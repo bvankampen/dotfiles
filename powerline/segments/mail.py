@@ -40,7 +40,7 @@ class EmailIMAPSegment(KwThreadedSegment):
 					[os.path.expanduser('~/.mailconfig/mutt/password.sh'),key.password],
 					stdout=subprocess.PIPE,
 					stderr=subprocess.STDOUT
-					).stdout.read().decode('utf-8')
+					).stdout.read().decode('utf-8').replace('\n','')
 
 		mail.login(key.username, password)
 		rc, message = mail.status(key.folder, '(UNSEEN)')
