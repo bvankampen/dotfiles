@@ -16,9 +16,6 @@ let g:coc_global_extensions = [
 
 let b:coc_pairs_disabled = ["(", "[", "{", "<", "'", "\"", "`"]
 
-if ! has("gui_win32")
-  let g:coc_disable_startup_warning = 1
-endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
