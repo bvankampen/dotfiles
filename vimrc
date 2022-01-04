@@ -52,6 +52,7 @@ nnoremap q <c-v>
 
 set pastetoggle=<leader>p
 nnoremap <leader>s :set hlsearch!<CR>
+nnoremap <leader>0 :set relativenumber!<CR>
 
 " ***********************************************
 " Plugins
