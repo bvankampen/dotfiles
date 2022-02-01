@@ -30,6 +30,12 @@ if [[ -d $HOME/.linkerd2/bin ]]; then
   export PATH=$PATH:$HOME/.linkerd2/bin
 fi
 
+if command -v storageos &> /dev/null; then
+  if [[ -f $HOME/.config/storageos.env ]]; then
+    source $HOME/.config/storageos.env
+  fi
+fi
+
 # OH-MY-ZSH CONFIG
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export ZSH="$HOME/.oh-my-zsh"
