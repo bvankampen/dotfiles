@@ -43,7 +43,9 @@ plugins=(
   tmux
 )
 
-ZSH_TMUX_AUTOSTART=true
+if [[ `uname` != "Darwin" ]]; then
+  ZSH_TMUX_AUTOSTART=true
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,4 +86,12 @@ fi
 
 if [[ -f /opt/homebrew/bin/bat ]]; then
   alias cat="/opt/homebrew/bin/bat --paging=never"
+fi
+
+if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
+  function iterm2_print_user_vars {
+    KUBECONTEXT=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
+    iterm2_set_user_var kubeContext $KUBECONTEXT
+  }
 fi
