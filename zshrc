@@ -1,3 +1,7 @@
+# COMPINIT
+autoload -Uz compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
 # PATHS AND ENV VARS
 export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 
@@ -86,6 +90,9 @@ if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
+if command -v terraform &> /dev/null; then
+  complete -o nospace -C /usr/local/bin/terraform terraform
+fi
 
 
 # ALIASES
