@@ -94,6 +94,9 @@ if command -v terraform &> /dev/null; then
   complete -o nospace -C /usr/local/bin/terraform terraform
 fi
 
+if command -v aws &> /dev/null; then
+  source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+fi
 
 # ALIASES
 
