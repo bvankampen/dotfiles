@@ -91,7 +91,9 @@ if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
 fi
 
 if command -v terraform &> /dev/null; then
+  alias tf=terraform
   complete -o nospace -C /usr/local/bin/terraform terraform
+  complete -o nospace -C /usr/local/bin/terraform tf
 fi
 
 if command -v aws &> /dev/null; then
