@@ -97,7 +97,8 @@ if command -v terraform &> /dev/null; then
 fi
 
 if command -v aws &> /dev/null; then
-  source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+  # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+  complete -C '/opt/homebrew/bin/aws_completer' aws
 fi
 
 # ALIASES
