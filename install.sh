@@ -37,3 +37,5 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/vimconfig/coc-settings.json ~/.vim/coc-settings.json
+
+git config --global core.excludesfile ~/.dotfiles/gitignore

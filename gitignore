@@ -1,0 +1,13 @@
+# Global
+__pycache__
+**/.DS_Store
+
+# VSCode
+.vscode
+
+# Terraform
+*tfstate*
+**/.terraform*
+**/*.tfvars
+!example.tfvars
+

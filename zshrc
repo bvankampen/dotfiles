@@ -92,8 +92,8 @@ fi
 
 if command -v terraform &> /dev/null; then
   alias tf=terraform
-  complete -o nospace -C /usr/local/bin/terraform terraform
-  complete -o nospace -C /usr/local/bin/terraform tf
+  complete -o nospace -C `which terraform` terraform
+  complete -o nospace -C `which terraform` tf
 fi
 
 if command -v aws &> /dev/null; then
