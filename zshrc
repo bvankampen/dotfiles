@@ -30,8 +30,10 @@ if [[ -d $HOME/code/scripts ]]; then
   export PATH=$PATH:$HOME/code/scripts
 fi
 
-if [[ -d /opt/homebrew/opt/ruby/bin ]]; then
-  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+if [[ `uname` = 'Darwin' ]]; then
+  if command -v rbenv &> /dev/null; then
+    eval "$(rbenv init -)"
+  fi
 fi
 
 if [[ -d $HOME/dev/scripts ]]; then
