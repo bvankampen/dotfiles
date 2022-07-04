@@ -30,6 +30,10 @@ if [[ -d $HOME/code/scripts ]]; then
   export PATH=$PATH:$HOME/code/scripts
 fi
 
+if [[ -d /opt/homebrew/opt/ruby/bin ]]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+fi
+
 if [[ -d $HOME/dev/scripts ]]; then
   export PATH=$PATH:$HOME/dev/scripts
 fi
@@ -101,6 +105,11 @@ if command -v aws &> /dev/null; then
   complete -C '/opt/homebrew/bin/aws_completer' aws
 fi
 
+if command -v vagrant &> /dev/null; then
+  fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
+  compinit
+fi
+
 # ALIASES
 
 if [[ -f /usr/bin/batcat ]]; then
@@ -122,3 +131,4 @@ if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
     iterm2_set_user_var kubeContext $KUBECONTEXT
   }
 fi
+
