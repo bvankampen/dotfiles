@@ -61,9 +61,9 @@ plugins=(
   tmux
 )
 
-if [[ `uname` != "Darwin" ]]; then
-  ZSH_TMUX_AUTOSTART=true
-fi
+# if [[ `uname` != "Darwin" ]]; then
+  # ZSH_TMUX_AUTOSTART=true
+# fi
 
 source $ZSH/oh-my-zsh.sh
 
