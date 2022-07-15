@@ -17,7 +17,7 @@ if has("gui_running")
     set guifont=Inconsolata\ 12
   elseif has("gui_macvim")
     set macligatures
-    set guifont=JetbrainsMono\ Nerd\ Font:h15
+    set guifont=JetBrainsMonoNerdFontCompleteM-Regular:h15
     set vb t_vb=.
   elseif has("gui_win32")
     set guifont=Cascadia\ Code\ PL:h11:cANSI
