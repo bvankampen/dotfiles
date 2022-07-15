@@ -79,6 +79,7 @@ source ~/.config/vim/coc.vim
 source ~/.config/vim/molokai.vim
 source ~/.config/vim/polyglot.vim
 source ~/.config/vim/commentary.vim
+source ~/.config/vim/vim-go.vim
 
 call plug#end()
 "doautocmd User PlugLoaded
