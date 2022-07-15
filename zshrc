@@ -105,6 +105,17 @@ fi
 
 # ALIASES
 
+ggg() {
+    git add .
+    if [ "$1" != "" ] # or better, if [ -n "$1" ]
+    then
+        git commit -m "$1"
+    else
+        git commit -m update
+    fi
+    git push
+}
+
 if [[ -f /usr/bin/batcat ]]; then
   alias cat="/usr/bin/batcat --paging=never"
 fi
