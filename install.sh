@@ -39,3 +39,7 @@ ln -sf ~/.dotfiles/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/vimconfig/coc-settings.json ~/.vim/coc-settings.json
 
 git config --global core.excludesfile ~/.dotfiles/gitignore
+
+# NVIM
+ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
+

@@ -117,6 +117,12 @@ ggg() {
     git push
 }
 
+
+if command -v nvim &> /dev/null; then
+  alias vim="nvim"
+  alias vi="nvim"
+fi
+
 if [[ -f /usr/bin/batcat ]]; then
   alias cat="/usr/bin/batcat --paging=never"
 fi
@@ -128,6 +134,7 @@ fi
 if [[ -f /usr/local/bin/bat ]]; then
   alias cat="/usr/local/bin/bat --paging=never"
 fi
+
 
 # if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
 #   source "${HOME}/.iterm2_shell_integration.zsh"
