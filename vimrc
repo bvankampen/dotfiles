@@ -40,8 +40,10 @@ map gf :edit <cfile><cr>
 
 let mapleader = "\<space>"
 
-nnoremap <leader>V :edit ~/.vimrc<CR>
-nnoremap <leader>1 :source ~/.vimrc<CR>
+nnoremap <leader>V :edit ~/.config/nvim/init.vim<CR>
+nnoremap <leader>1 :source ~/.config/nvim/init.vim<CR>
+" nnoremap <leader>V :edit ~/.vimrc<CR>
+" nnoremap <leader>1 :source ~/.vimrc<CR>
 
 nnoremap <leader><Left> :bprev<CR>
 nnoremap <leader><Right> :bnext<CR>
@@ -75,6 +77,8 @@ source ~/.config/vim/vim-trailing-whitespace.vim
 source ~/.config/vim/vim-hcl.vim
 source ~/.config/vim/nerdtree.vim
 source ~/.config/vim/gitgutter.vim
+" source ~/.config/vim/treesitter.vim
+source ~/.config/vim/lsp.vim
 source ~/.config/vim/coc.vim
 source ~/.config/vim/molokai.vim
 source ~/.config/vim/polyglot.vim
@@ -126,7 +130,7 @@ let g:airline_powerline_fonts = 1
 " Colors
 " ***********************************************
 
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+" autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
 autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
 autocmd vimenter * hi clear CursorlineNR
