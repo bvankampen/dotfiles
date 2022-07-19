@@ -104,6 +104,7 @@ colorscheme OceanicNext
 " Global Config
 " ***********************************************
 set encoding=UTF-8
+syntax on
 
 set nocompatible
 filetype off
@@ -123,7 +124,6 @@ set signcolumn=yes
 set number
 set cursorline
 set wrap linebreak
-syntax on
 
 set backup
 
@@ -144,6 +144,9 @@ autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
 autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
 autocmd vimenter * hi clear CursorlineNR
 autocmd vimenter * hi Cursorline cterm=bold ctermbg=NONE guibg=NONE
+autocmd vimenter * hi SignColumn guibg=NONE ctermbg=NONE
+autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+
 
 " ***********************************************
 " Filetype Configs
