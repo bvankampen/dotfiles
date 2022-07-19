@@ -80,7 +80,7 @@ source ~/.config/vim/gitgutter.vim
 " source ~/.config/vim/treesitter.vim
 source ~/.config/vim/lsp.vim
 source ~/.config/vim/coc.vim
-source ~/.config/vim/molokai.vim
+source ~/.config/vim/themes.vim
 source ~/.config/vim/polyglot.vim
 source ~/.config/vim/commentary.vim
 source ~/.config/vim/vim-go.vim
@@ -89,7 +89,16 @@ call plug#end()
 "doautocmd User PlugLoaded
 
 filetype plugin indent on
-colorscheme molokai
+" Available themes molokai onehalfdark
+
+if (has("termguicolors"))
+    set termguicolors
+endif
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+
+
 
 " ***********************************************
 " Global Config
@@ -130,7 +139,7 @@ let g:airline_powerline_fonts = 1
 " Colors
 " ***********************************************
 
-" autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
 autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
 autocmd vimenter * hi clear CursorlineNR
