@@ -96,6 +96,7 @@ fi
 if command -v aws &> /dev/null; then
   # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
   complete -C '/opt/homebrew/bin/aws_completer' aws
+  alias aws-lz='eval $(c9s creds aws --enable-desktop-notifications)'
 fi
 
 if command -v vagrant &> /dev/null; then
