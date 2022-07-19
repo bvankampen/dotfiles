@@ -16,23 +16,7 @@
 					}
 			},
 			{
-				"function": "mail.email_imap_alert",
-				"priority": 40,
-				"args": {
-					"username": "bas@ping6.nl",
-					"password": "fastmail",
-					"server": "imap.fastmail.com",
-					"port": "993",
-					"use_ssl": true,
-					"folder": "INBOX"
-				}
-			},
-			{
 				"function": "powerline.segments.common.sys.uptime",
-				"priority": 50
-			},
-			{
-				"function": "powerline.segments.common.sys.system_load",
 				"priority": 50
 			},
 			{
@@ -47,7 +31,10 @@
 				}
 			},
 			{
-				"function": "powerline.segments.common.net.hostname"
+				"function": "powerline.segments.common.net.hostname",
+				"args": {
+					"exclude_domain": true
+				}
 			}
 		]
 	}
