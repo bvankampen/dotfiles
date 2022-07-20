@@ -9,8 +9,7 @@ let g:coc_global_extensions = [
     \ 'coc-diagnostic',
     \ 'coc-sh',
     \ 'coc-sql',
-    \ 'coc-go',
-    \ 'coc-python',
+    \ 'coc-pyright',
     \ 'coc-htmldjango'
 \ ]
 

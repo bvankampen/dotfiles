@@ -74,17 +74,16 @@ source ~/.config/vim/vim-fugitive.vim
 source ~/.config/vim/vim-airlines.vim
 source ~/.config/vim/fzf.vim
 source ~/.config/vim/vim-trailing-whitespace.vim
-source ~/.config/vim/vim-hcl.vim
 source ~/.config/vim/nerdtree.vim
 source ~/.config/vim/gitgutter.vim
 " source ~/.config/vim/treesitter.vim
-source ~/.config/vim/lsp.vim
+" source ~/.config/vim/lsp.vim
 source ~/.config/vim/coc.vim
 source ~/.config/vim/themes.vim
 source ~/.config/vim/polyglot.vim
 source ~/.config/vim/commentary.vim
-source ~/.config/vim/vim-go.vim
-source ~/.config/vim/vim-hcl.vim
+" source ~/.config/vim/vim-go.vim
+" source ~/.config/vim/vim-hcl.vim
 
 call plug#end()
 "doautocmd User PlugLoaded
