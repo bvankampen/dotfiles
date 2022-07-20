@@ -84,6 +84,7 @@ source ~/.config/vim/themes.vim
 source ~/.config/vim/polyglot.vim
 source ~/.config/vim/commentary.vim
 source ~/.config/vim/vim-go.vim
+source ~/.config/vim/vim-hcl.vim
 
 call plug#end()
 "doautocmd User PlugLoaded
@@ -139,13 +140,21 @@ let g:airline_powerline_fonts = 1
 " Colors
 " ***********************************************
 
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
-autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
-autocmd vimenter * hi clear CursorlineNR
-autocmd vimenter * hi Cursorline cterm=bold ctermbg=NONE guibg=NONE
-autocmd vimenter * hi SignColumn guibg=NONE ctermbg=NONE
-autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+" autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+" autocmd vimenter * hi Visual cterm=bold ctermbg=67 ctermfg=NONE
+" autocmd vimenter * hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
+" autocmd vimenter * hi clear CursorlineNR
+" autocmd vimenter * hi Cursorline cterm=bold ctermbg=NONE guibg=NONE
+" autocmd vimenter * hi SignColumn guibg=NONE ctermbg=NONE
+" autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+hi Normal guibg=NONE ctermbg=NONE
+hi Visual cterm=bold ctermbg=67 ctermfg=NONE
+hi LineNr term=underline ctermfg=59 ctermbg=NONE guifg=#465457 guibg=NONE
+hi clear CursorlineNR
+hi Cursorline cterm=bold ctermbg=NONE guibg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer ctermfg=NONE guifg=NONE guibg=NONE ctermbg=NONE
 
 
 " ***********************************************
