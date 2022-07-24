@@ -44,7 +44,7 @@ local on_attach = function(_, bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
--- 
+--
 -- Language Servers
 --
 require'lspconfig'.jsonls.setup{
