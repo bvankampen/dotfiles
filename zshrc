@@ -55,7 +55,7 @@ plugins=(
 )
 
 # if [[ `uname` != "Darwin" ]]; then
-# ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTAR=true
 # fi
 
 source $ZSH/oh-my-zsh.sh
