@@ -54,9 +54,7 @@ plugins=(
   tmux
 )
 
-# if [[ `uname` != "Darwin" ]]; then
-ZSH_TMUX_AUTOSTAR=true
-# fi
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
