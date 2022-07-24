@@ -45,7 +45,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- 
---
+-- Language Servers
 --
 
 require('lspconfig')['gopls'].setup{
@@ -58,8 +58,15 @@ require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
 
+require'lspconfig'.terraformls.setup{}
+--  brew install hashicorp/tap/terraform-ls
 
+require'lspconfig'.ansiblels.setup{}
+--  npm install -g @ansible/ansible-language-server
 
+--
+--
+--
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
