@@ -30,6 +30,13 @@ return packer.startup(function(use)
    end
   }
 
+  -- use {
+  --   'mhartington/oceanic-next',
+  --   config = function()
+  --     require('user.plugins.oceanic-next')
+  --   end
+  -- }
+
   use {
     'sickill/vim-pasta',
     config = function()
