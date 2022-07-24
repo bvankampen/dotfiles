@@ -48,7 +48,7 @@ nnoremap <leader>1 :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader><Left> :bprev<CR>
 nnoremap <leader><Right> :bnext<CR>
 nnoremap <leader>n :enew<CR>
-nnoremap <leader>d :bd<CR>
+nnoremap <leader>Q :bd<CR>
 
 nnoremap q <c-v>
 
