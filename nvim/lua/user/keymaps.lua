@@ -20,3 +20,4 @@ keymap('v', 'Y', 'myY`y')
 keymap('n', '<leader><Left>', ':bprev<CR>')
 keymap('n', '<leader><Right>', ':bnext<CR>')
 
+keymap('n', '<leader>/', ':Format<CR>')
