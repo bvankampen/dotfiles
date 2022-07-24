@@ -7,7 +7,7 @@ parser_config.solidity = {
 }
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = {'html', 'go', 'python', 'lua', },
+  ensure_installed = {'html', 'go', 'python', 'lua', 'hcl' },
   auto_install = true,
   indent = {
     enable = { 'html' },
