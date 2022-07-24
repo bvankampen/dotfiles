@@ -33,7 +33,7 @@ require('lualine').setup {
       'branch',
       'diff',
       { '"▕"', color = { fg = separator } },
-      '"🖧  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
+      '"力" .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
       { 'diagnostics', sources = { 'nvim_diagnostic' } },
       { '"▏"', color = { fg = separator } },
     },
