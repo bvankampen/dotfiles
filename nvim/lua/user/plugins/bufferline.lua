@@ -1,5 +1,3 @@
-vim.cmd [[highlight BufferlineOffset guifg = '#80a0ff' guibg = '#21222C']]
-
 require('bufferline').setup {
   options = {
     indicator_icon = ' ',

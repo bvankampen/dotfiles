@@ -23,19 +23,11 @@ return packer.startup(function(use)
   }
 
   use {
-    'dracula/vim',
-    as = 'dracula',
-   config = function()
-     require('user.plugins.dracula')
-   end
+    'mhartington/oceanic-next',
+    config = function()
+      require('user.plugins.oceanic-next')
+    end
   }
-
-  -- use {
-  --   'mhartington/oceanic-next',
-  --   config = function()
-  --     require('user.plugins.oceanic-next')
-  --   end
-  -- }
 
   use {
     'sickill/vim-pasta',
