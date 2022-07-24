@@ -47,6 +47,8 @@ end
 --
 -- Language Servers
 --
+--
+-- npm i -g vscode-langservers-extracted
 require'lspconfig'.jsonls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
