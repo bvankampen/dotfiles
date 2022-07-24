@@ -47,6 +47,29 @@ end
 -- 
 -- Language Servers
 --
+require'lspconfig'.jsonls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas()
+    }
+  }
+}
+
+-- yarn global add yaml-language-server
+require('lspconfig')['yamlls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+-- require('lspconfig')[''].setup{
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- }
 
 require('lspconfig')['gopls'].setup{
     on_attach = on_attach,
@@ -58,12 +81,17 @@ require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
 
-require'lspconfig'.terraformls.setup{}
 --  brew install hashicorp/tap/terraform-ls
+require'lspconfig'.terraformls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
 
-require'lspconfig'.ansiblels.setup{}
 --  npm install -g @ansible/ansible-language-server
-
+require'lspconfig'.ansiblels.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
 --
 --
 --
