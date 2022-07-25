@@ -42,4 +42,3 @@ git config --global core.excludesfile ~/.dotfiles/gitignore
 
 # NVIM
 ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
-
