@@ -52,6 +52,7 @@ plugins=(
   history
   zsh-autosuggestions
   tmux
+  z
 )
 
 ZSH_TMUX_AUTOSTART=true
