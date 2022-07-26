@@ -14,6 +14,8 @@ function update_title() {
   if [[ -n "$TMUX" ]] && [[ $TERM == screen* || $TERM == tmux* ]]; then
     if [[ "$1" == "ssh"* ]]; then
       print -n "\ek${(%)a}\e\\"
+    elif [[ "$1" == "zsh"* ]]; then
+      print -n "\ek${(%)2}\e\\"
     else
       print -n "\ek${(%)a}:${(%)2}\e\\"
     fi
