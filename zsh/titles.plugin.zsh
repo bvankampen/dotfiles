@@ -12,6 +12,8 @@ function update_title() {
   # remove newlines
   a=${a//$'\n'/}
   if [[ -n "$TMUX" ]] && [[ $TERM == screen* || $TERM == tmux* ]]; then
+    # no folder for ssh
+    # no zsh only folder
     if [[ "$1" == "ssh"* ]]; then
       print -n "\ek${(%)a}\e\\"
     elif [[ "$1" == "zsh"* ]]; then
