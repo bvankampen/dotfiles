@@ -8,6 +8,13 @@ return packer.startup(function(use)
   -- use { 'bronson/vim-trailing-whitespace' }
   use { 'tpope/vim-sleuth' }
   use { 'jessarcher/vim-heritage' }
+  
+  use { 
+    'nathom/filetype.nvim', 
+    config = function() 
+      require('user.plugins.filetype')
+    end
+  }
 
   use {
     'nvim-telescope/telescope.nvim',

@@ -31,7 +31,3 @@ vim.o.redrawtime = 10000        -- Allow more time for loading syntax on large f
 vim.o.showmode = false
 vim.o.fillchars = 'eob: '
 
-vim.cmd([[
-  autocmd Filetype go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
-  autocmd Filetype markdown setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
-]])

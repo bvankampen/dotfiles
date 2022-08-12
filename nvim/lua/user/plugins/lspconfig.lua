@@ -94,6 +94,12 @@ require'lspconfig'.ansiblels.setup{
   on_attach = on_attach,
   flags = lsp_flags,
 }
+
+-- npm i -g vscode-langservers-extracted
+require'lspconfig'.html.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
 --
 --
 --
