@@ -3,7 +3,9 @@ vim.g.d_load_filetypes = 1
 require('filetype').setup({
   overrides = {
     extensions = {
-      html = "html"
+      html = "html",
+      tf = "terraform",
+      tfvars = "terraform",
     },
   }
 })

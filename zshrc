@@ -1,5 +1,5 @@
 # COMPINIT
-autoload -Uz compinit && compinit
+autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
 # PATHS AND ENV VARS
@@ -72,6 +72,8 @@ if command -v kubectl &> /dev/null; then
   typeset do=(--dry-run=client -o yaml)
 fi
 
+
+
 if command -v helm &>/dev/null; then
   source <(helm completion zsh)
 fi
@@ -100,7 +102,6 @@ fi
 
 if command -v vagrant &> /dev/null; then
   fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
-  compinit
 fi
 
 if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
