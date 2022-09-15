@@ -16,9 +16,9 @@ if [[ `uname` = 'Linux' && -d /usr/lib/xsessions ]]; then
   fi
 fi
 
-if [[ `uname` = 'Darwin' ]]; then
+## if [[ `uname` = 'Darwin' ]]; then
   ##
-fi
+## fi
 
 # Add current Kubernetes cluster to powerline status
 if command -v kubectl &> /dev/null; then
