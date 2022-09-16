@@ -151,6 +151,11 @@ if [[ -f /usr/local/bin/bat ]]; then
   alias cat="/usr/local/bin/bat --paging=never"
 fi
 
+if [[ -f /usr/bin/bat ]]; then
+  alias cat="/usr/bin/bat --paging=never"
+fi
+
+
 
 # if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
 #   source "${HOME}/.iterm2_shell_integration.zsh"
