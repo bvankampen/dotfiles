@@ -137,6 +137,9 @@ clicolors() {
 if command -v nvim &> /dev/null; then
   alias vim="nvim"
   alias vi="nvim"
+
+  export VISUAL=nvim
+  export EDITOR="$VISUAL"
 fi
 
 if [[ -f /usr/bin/batcat ]]; then
