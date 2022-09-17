@@ -16,8 +16,10 @@ if command -v docker &> /dev/null; then
   export DOCKER_BUILDKIT=1
 fi
 
-if [[ -d /usr/local/go ]]; then
+if [[ -d /usr/local/go || -f /usr/bin/go ]]; then
+  if [[ -d /usr/local/go ]]; then
   export PATH=$PATH:/usr/local/go/bin
+  fi
   if [[ -d $HOME/go ]]; then
     export GOPATH=$HOME/go
   else
@@ -107,6 +109,11 @@ fi
 if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
   source ~/.dotfiles/zsh/titles.plugin.zsh 
 fi
+
+if [[ -f ~/.local/local.env ]]; then
+    source ~/.local/local.env
+fi
+
 
 # ALIASES
 
