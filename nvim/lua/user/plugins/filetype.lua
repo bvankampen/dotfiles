@@ -5,8 +5,11 @@ require('filetype').setup({
     extensions = {
       html = "html",
       tf = "terraform",
-      tfvars = "terraform",
+      tfvars = "terraform"
     },
+    literal = {
+      ["python3.9"]  = "python"
+    }
   }
 })
 
