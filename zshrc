@@ -1,3 +1,7 @@
+if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+  export SESSION_TYPE="remote/ssh"
+fi
+
 # COMPINIT
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
@@ -47,7 +51,7 @@ fi
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="my"
 COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
@@ -57,8 +61,9 @@ plugins=(
   z
 )
 
-
-# ZSH_TMUX_AUTOSTART=true
+if [[ $SESSION_TYPE != 'remote/ssh' ]]; then
+  ZSH_TMUX_AUTOSTART=true
+fi
 
 source $ZSH/oh-my-zsh.sh
 

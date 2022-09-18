@@ -41,7 +41,7 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/vimconfig/coc-settings.json ~/.vim/coc-settings.json
-
+ln -sf ~/.dotfiles/my.zsh-theme ~/.oh-my-zsh/custom/themes/my.zsh-theme
 git config --global core.excludesfile ~/.dotfiles/gitignore
 
 # NVIM
