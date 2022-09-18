@@ -81,6 +81,39 @@ if command -v kubectl &> /dev/null; then
 fi
 
 
+if command -v k3d &>/dev/null; then
+  source <(k3d completion zsh)
+fi
+
+if command -v velero &>/dev/null; then
+  source <(velero completion zsh)
+fi
+
+if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+if command -v terraform &> /dev/null; then
+  alias tf=terraform
+  complete -o nospace -C `which terraform` terraform
+  complete -o nospace -C `which terraform` tf
+fi
+
+if command -v aws &> /dev/null; then
+  # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+  complete -C '/opt/homebrew/bin/aws_completer' aws
+  alias aws-lz='eval $(c9s creds aws --enable-desktop-notifications)'
+fi
+
+if command -v vagrant &> /dev/null; then
+  fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
+fi
+
+if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
+  source ~/.dotfiles/zsh/titles.plugin.zsh 
+fi
 
 if command -v helm &>/dev/null; then
   source <(helm completion zsh)
