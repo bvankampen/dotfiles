@@ -3,17 +3,7 @@ require('lualine').setup {
   options = {
     component_separators = '',
     section_separators = '▕',
-    theme = {
-      normal = {
-        a = { fg = fg, bg = bg },
-        b = { fg = fg, bg = bg },
-        c = { fg = fg, bg = bg },
-        x = { fg = fg, bg = bg },
-        y = { fg = fg, bg = bg },
-        z = { fg = fg, bg = bg },
-      },
-      inactive = { c = { fg = fg, bg = bg } },
-    },
+    theme = auto,
   },
   sections = {
     lualine_a = {

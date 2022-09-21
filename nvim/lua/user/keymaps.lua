@@ -21,3 +21,11 @@ keymap('n', '<leader><Left>', ':bprev<CR>')
 keymap('n', '<leader><Right>', ':bnext<CR>')
 
 keymap('n', '<leader>/', ':Format<CR>')
+
+keymap('n', '<leader>a', '<C-W><C-H>')
+keymap('n', '<leader>d', '<C-W><C-L>')
+keymap('n', '<leader>w', '<C-W><C-K>')
+keymap('n', '<leader>s', '<C-W><C-J>')
+keymap('n', '<leader>.', '<C-W><C-W>')
+
+
