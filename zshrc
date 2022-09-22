@@ -61,7 +61,7 @@ plugins=(
   z
 )
 
-if [[ $SESSION_TYPE != 'remote/ssh' ]]; then
+if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' ]]; then
   ZSH_TMUX_AUTOSTART=true
 fi
 
