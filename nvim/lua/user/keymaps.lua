@@ -4,6 +4,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 keymap('n', '<leader>k', ':nohlsearch<CR>')
+keymap('n', '<leader>q', ':bdelete<CR>')
 keymap('n', '<leader>Q', ':bdelete<CR>')
 
 keymap('', 'gf', ':edit <cfile><CR>')

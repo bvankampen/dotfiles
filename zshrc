@@ -95,12 +95,6 @@ if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
-if command -v terraform &> /dev/null; then
-  alias tf=terraform
-  complete -o nospace -C `which terraform` terraform
-  complete -o nospace -C `which terraform` tf
-fi
-
 if command -v aws &> /dev/null; then
   # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
   complete -C '/opt/homebrew/bin/aws_completer' aws
@@ -131,6 +125,8 @@ fi
 
 if command -v terraform &> /dev/null; then
   alias tf=terraform
+  alias tfa="terraform apply --auto-approve"
+  alias tfd="terraform destroy --auto-approve"
   complete -o nospace -C `which terraform` terraform
   complete -o nospace -C `which terraform` tf
 fi
