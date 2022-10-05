@@ -21,7 +21,7 @@ keymap('v', 'Y', 'myY`y')
 keymap('n', '<leader><Left>', ':bprev<CR>')
 keymap('n', '<leader><Right>', ':bnext<CR>')
 
-keymap('n', '<leader>/', ':Format<CR>')
+-- keymap('n', '<leader>/', ':Format<CR>')
 
 keymap('n', '<leader>a', '<C-W><C-H>')
 keymap('n', '<leader>d', '<C-W><C-L>')

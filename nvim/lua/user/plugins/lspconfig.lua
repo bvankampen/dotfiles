@@ -41,7 +41,8 @@ local on_attach = function(_, bufnr)
   buf_keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
   -- buf_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
   -- buf_keymap(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]])
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  buf_keymap(bufnr, 'n', '<leader>/', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 end
 
 --
@@ -78,9 +79,28 @@ require('lspconfig')['gopls'].setup{
     flags = lsp_flags,
 }
 
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+-- require('lspconfig')['pyright'].setup{
+--     on_attach = on_attach,
+--     flags = lsp_flags,
+-- }
+
+-- pip install "python-lsp-server[all]"
+require'lspconfig'.pylsp.setup{
+  on_attach = on_attach,
+  flags = lsp_flags,
+  settings = {
+    pylsp = {
+      plugins = {
+        black = {
+          enabled = true
+        },
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
 }
 
 --  brew install hashicorp/tap/terraform-ls
