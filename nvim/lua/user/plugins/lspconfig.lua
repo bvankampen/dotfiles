@@ -62,6 +62,10 @@ require'lspconfig'.jsonls.setup{
     }
   }
 }
+require'lspconfig'.cssls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags
+}
 
 -- yarn global add yaml-language-server
 require('lspconfig')['yamlls'].setup{
