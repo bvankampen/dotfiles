@@ -94,6 +94,9 @@ require'lspconfig'.pylsp.setup{
         black = {
           enabled = true
         },
+        mccabe = {
+          enabled = false
+        },
         pycodestyle = {
           ignore = {'W391'},
           maxLineLength = 100
