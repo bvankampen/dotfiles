@@ -98,9 +98,18 @@ require'lspconfig'.pylsp.setup{
           enabled = false
         },
         pycodestyle = {
+          enabled = false,
           ignore = {'W391'},
           maxLineLength = 100
+        },
+        pyflakes = {
+          enabled = false
+        },
+        flake8 = {
+          enabled = true,
+          maxLineLength = 100
         }
+
       }
     }
   }
