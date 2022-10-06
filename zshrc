@@ -47,14 +47,7 @@ if [[ -d $HOME/dev/scripts ]]; then
 fi
 
 
-if [[ -f $HOME/.local/bin/virtualenvwrapper.sh ]]; then
-  export WORKON_HOME=$HOME/.local/venv
-  export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-  if [[ ! -d $WORKON_HOME ]]; then
-    mkdir -p $WORKON_HOME
-  fi
-  source $HOME/.local/bin/virtualenvwrapper.sh
-fi
+
 
 
 # OH-MY-ZSH CONFIG
@@ -69,8 +62,17 @@ plugins=(
   zsh-autosuggestions
   tmux
   z
-  virtualenvwrapper
 )
+
+if command -v virtualenvwrapper.sh &> /dev/null; then
+  export WORKON_HOME=$HOME/.local/venv
+  export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+  plugins=($plugins virtualenvwrapper)
+  if [[ ! -d $WORKON_HOME ]]; then
+    mkdir -p $WORKON_HOME
+  fi
+  source virtualenvwrapper.sh
+fi
 
 if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' ]]; then
   ZSH_TMUX_AUTOSTART=true
