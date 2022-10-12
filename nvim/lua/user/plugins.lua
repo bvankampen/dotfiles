@@ -3,7 +3,7 @@ local packer = require 'lib.packer-init'
 return packer.startup(function(use)
   use {'wbthomason/packer.nvim'}
 
-  use { 'tpope/vim-commentary' }
+  -- use { 'tpope/vim-commentary' }
   use { 'tpope/vim-eunuch' }
   -- use { 'bronson/vim-trailing-whitespace' }
   use { 'tpope/vim-sleuth' }
@@ -13,6 +13,24 @@ return packer.startup(function(use)
     'nathom/filetype.nvim', 
     config = function() 
       require('user.plugins.filetype')
+    end
+  }
+
+
+  use {
+    "terrortylor/nvim-comment",
+    config = function()
+      require("nvim_comment").setup {
+    }
+    end
+  }
+
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+
+    }
     end
   }
 
@@ -111,7 +129,7 @@ return packer.startup(function(use)
 
   use {
     'hrsh7th/nvim-cmp',
-    requires = {
+    requires = { 
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'saadparwaiz1/cmp_luasnip',
