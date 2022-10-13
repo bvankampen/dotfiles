@@ -50,8 +50,15 @@ telescope.setup {
 
 require('telescope').load_extension 'fzf'
 
-keymap('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
-keymap('n', '<leader>F', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]]) -- luacheck: no max line length
-keymap('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]])
-keymap('n', '<leader>r', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]])
-keymap('n', '<leader>h', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]])
+keymap('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<CR>]], {desc = 'find files'})
+keymap('n', '<leader>F', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]], {desc = 'find file (with .gitignore)'}) -- luacheck: no max line length
+keymap('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], {desc = 'buffers'})
+keymap('n', '<leader>r', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]], {desc = 'live grep'})
+keymap('n', '<leader>h', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], {desc = 'history'})
+keymap('n', '<leader>t', [[<cmd>lua require('telescope.builtin').filetypes()<CR>]], {desc = 'filetypes'})
+
+keymap('n', '<leader>zz', [[<cmd>lua require('telescope.builtin').git_status()<CR>]], {desc = 'git status'})
+keymap('n', '<leader>zc', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]], {desc = 'git commits'})
+keymap('n', '<leader>zx', [[<cmd>lua require('telescope.builtin').git_bcommits()<CR>]], {desc = 'git buffer commits'})
+keymap('n', '<leader>zb', [[<cmd>lua require('telescope.builtin').git_branches()<CR>]], {desc = 'git branches'})
+keymap('n', '<leader>zs', [[<cmd>lua require('telescope.builtin').git_stash()<CR>]], {desc = 'git stash'})

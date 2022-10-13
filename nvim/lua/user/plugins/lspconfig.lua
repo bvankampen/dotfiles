@@ -67,10 +67,10 @@ require'lspconfig'.cssls.setup{
   flags = lsp_flags
 }
 
--- require'lspconfig'.salt_ls.setup{
---   on_attach = on_attach,
---   flags = lsp_flags
--- }
+require'lspconfig'.ansiblels.setup{
+  on_attach = on_attach,
+  flags = lsp_flags
+}
 
 -- yarn global add yaml-language-server
 require('lspconfig')['yamlls'].setup{
