@@ -10,6 +10,10 @@ require('filetype').setup({
     },
     literal = {
       ["python3.9"]  = "python"
+    },
+    complex = {
+      [".*/ansible/.*%.yml"] = "yaml.ansible",
+      [".*/roles/.*%.yml"] = "yaml.ansible",
     }
   }
 })
