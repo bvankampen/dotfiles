@@ -47,6 +47,11 @@ return packer.startup(function(use)
     end
   }
 
+  -- mkdir
+  use {
+    'jghauser/mkdir.nvim'
+  }
+
   use {
     'mhartington/oceanic-next',
     config = function()
