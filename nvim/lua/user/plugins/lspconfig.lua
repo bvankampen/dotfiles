@@ -42,7 +42,7 @@ local on_attach = function(_, bufnr)
   -- buf_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
   -- buf_keymap(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]])
   -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
-  buf_keymap(bufnr, 'n', '<leader>/', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+  buf_keymap(bufnr, 'n', '<leader>/', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
 end
 
 --
@@ -63,6 +63,11 @@ require'lspconfig'.jsonls.setup{
   }
 }
 require'lspconfig'.cssls.setup{
+  on_attach = on_attach,
+  flags = lsp_flags
+}
+
+require'lspconfig'.salt_ls.setup{
   on_attach = on_attach,
   flags = lsp_flags
 }
