@@ -1,5 +1,12 @@
 if [[ $SESSION_TYPE == "remote/ssh" ]]; then
-  ICON=$'\Uf314'
+  case `uname` in
+    "Linux")
+      ICON=$'\Uf314'
+      ;;
+    "Darwin")
+      ICON=$'\Ue711'
+      ;;
+  esac
 else
   ICON="➜"
 fi
