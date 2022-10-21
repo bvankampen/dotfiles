@@ -4,7 +4,7 @@ if [[ $SESSION_TYPE == "remote/ssh" ]]; then
       ICON=$'\Uf314'
       ;;
     "Darwin")
-      ICON=$'\Ue711'
+      ICON=$'\Ufc66'
       ;;
   esac
 else
