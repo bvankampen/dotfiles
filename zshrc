@@ -76,6 +76,7 @@ fi
 
 if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' ]]; then
   ZSH_TMUX_AUTOSTART=true
+  ZSH_TMUX_AUTOCONNECT=false
 fi
 
 source $ZSH/oh-my-zsh.sh
