@@ -46,7 +46,9 @@ if [[ -d $HOME/dev/scripts ]]; then
   export PATH=$PATH:$HOME/dev/scripts
 fi
 
-
+if [[ -d $HOME/.cargo/bin ]]; then
+  export PATH=$PATH:$HOME/.cargo/bin
+fi
 
 
 
