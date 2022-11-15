@@ -1,3 +1,9 @@
+if [[ $KONSOLE="1" ]]; then
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+fi
+
 if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   export SESSION_TYPE="remote/ssh"
 fi
@@ -56,7 +62,12 @@ fi
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="my"
+if [[ $KONSOLE="1" ]]; then
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+else
+  ZSH_THEME="my"
+fi
+
 COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
@@ -76,7 +87,7 @@ if command -v virtualenvwrapper.sh &> /dev/null; then
   source virtualenvwrapper.sh
 fi
 
-if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' ]]; then
+if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' && $KONSOLE != "1" ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOCONNECT=false
 fi
@@ -157,10 +168,6 @@ if command -v vagrant &> /dev/null; then
   fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 fi
 
-if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
-  source ~/.dotfiles/zsh/titles.plugin.zsh 
-fi
-
 if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
@@ -231,3 +238,8 @@ fi
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH=$PATH:"/Users/bkampen/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+if [[ $KONSOLE="1" ]]; then
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
