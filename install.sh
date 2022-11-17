@@ -49,11 +49,7 @@ ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
 
 # powerline10k
 # https://github.com/romkatv/powerlevel10
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-# Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
 
-# ln -sf ~/.dotfiles/p10k.zsh ~/.p10k.zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+ln -sf ~/.dotfiles/p10k.zsh ~/.p10k.zsh
 
-# Starship
-curl -sS https://starship.rs/install.sh | sh
-ln -sf ~/.dotfiles/starship.toml ~/.config/starship.toml
