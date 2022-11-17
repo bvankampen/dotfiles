@@ -1,8 +1,4 @@
-if [[ $KONSOLE="1" ]]; then
-  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-  fi
-fi
+TMUX=0
 
 if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   export SESSION_TYPE="remote/ssh"
@@ -62,11 +58,7 @@ fi
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export ZSH="$HOME/.oh-my-zsh"
 
-if [[ $KONSOLE="1" ]]; then
-  ZSH_THEME="powerlevel10k/powerlevel10k"
-else
-  ZSH_THEME="my"
-fi
+ZSH_THEME="my"
 
 COMPLETION_WAITING_DOTS="true"
 plugins=(
@@ -87,7 +79,7 @@ if command -v virtualenvwrapper.sh &> /dev/null; then
   source virtualenvwrapper.sh
 fi
 
-if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' && $KONSOLE != "1" ]]; then
+if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' && $KONSOLE != "1" && $TMUX==1 ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOCONNECT=false
 fi
@@ -140,10 +132,6 @@ if command -v helm &>/dev/null; then
   source <(helm completion zsh)
 fi
 
-if command -v velero &>/dev/null; then
-  source <(velero completion zsh)
-fi
-
 if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -156,16 +144,6 @@ if command -v terraform &> /dev/null; then
   alias tfd="terraform destroy --auto-approve"
   complete -o nospace -C `which terraform` terraform
   complete -o nospace -C `which terraform` tf
-fi
-
-if command -v aws &> /dev/null; then
-  # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
-  complete -C '/opt/homebrew/bin/aws_completer' aws
-  alias aws-lz='eval $(c9s creds aws --enable-desktop-notifications)'
-fi
-
-if command -v vagrant &> /dev/null; then
-  fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 fi
 
 if [[ -f ~/.local/local.env ]]; then
@@ -224,22 +202,16 @@ if [[ -f /usr/bin/bat ]]; then
 fi
 
 
-
-# if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
-#   source "${HOME}/.iterm2_shell_integration.zsh"
-#   function iterm2_print_user_vars {
-#     # KUBECONTEXT=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
-#     KUBECONTEXT=$(CTX=$(awk '/^current-context:/{print $2;exit;}' <~/.kube/config) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
-#     iterm2_set_user_var kubeContext $KUBECONTEXT
-#   }
-# fi
+if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
+  function iterm2_print_user_vars {
+    # KUBECONTEXT=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
+    KUBECONTEXT=$(CTX=$(awk '/^current-context:/{print $2;exit;}' <~/.kube/config) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
+    iterm2_set_user_var kubeContext $KUBECONTEXT
+  }
+fi
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH=$PATH:"/Users/bkampen/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-if [[ $KONSOLE="1" ]]; then
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-fi
