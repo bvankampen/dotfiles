@@ -1,17 +1,36 @@
+
+# format = """
+# $username\
+# $hostname\
+# $directory\
+# $git_branch\
+# $git_state\
+# $git_status\
+# $git_metrics\
+# $fill\
+# $python\
+# $terraform\
+# $kubernetes\
+# $line_break\
+# $character"""
+
 format = """
 $username\
 $hostname\
 $directory\
+$character"""
+
+right_format = """
 $git_branch\
 $git_state\
 $git_status\
 $git_metrics\
-$fill\
 $python\
 $terraform\
-$kubernetes\
-$line_break\
-$character"""
+$kubernetes"""
+
+add_newline = false
+
 
 [fill]
 symbol = " "
@@ -26,6 +45,14 @@ truncate_to_repo = false
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
 vicmd_symbol = "[❮](green)"
+
+[username]
+disabled = false
+format = "[$user]($style)"
+
+[hostname]
+disabled = false
+format = "[@$hostname]($style) "
 
 [git_branch]
 symbol = " "

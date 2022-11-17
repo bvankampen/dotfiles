@@ -1,4 +1,10 @@
+OS=`uname`
+HOSTNAME=`hostname`
 TMUX=0
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   export SESSION_TYPE="remote/ssh"
@@ -11,7 +17,7 @@ autoload -U +X bashcompinit && bashcompinit
 # PATHS AND ENV VARS
 export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 
-if [[ `uname` = 'Darwin' ]]; then
+if [[ $OS == "Darwin" ]]; then
   export PATH=$PATH:/opt/homebrew/opt/mysql-client/bin:
   export LC_CTYPE=en_US.UTF-8
   export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
@@ -38,7 +44,7 @@ if [[ -d $HOME/code/scripts ]]; then
   export PATH=$PATH:$HOME/code/scripts
 fi
 
-if [[ `uname` = 'Darwin' ]]; then
+if [[ $OS == 'Darwin' ]]; then
   if command -v rbenv &> /dev/null; then
     eval "$(rbenv init -)"
   fi
@@ -52,27 +58,26 @@ if [[ -d $HOME/.cargo/bin ]]; then
   export PATH=$PATH:$HOME/.cargo/bin
 fi
 
+  # OH-MY-ZSH CONFIG
+  export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+  export ZSH="$HOME/.oh-my-zsh"
 
+  ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# OH-MY-ZSH CONFIG
-export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-export ZSH="$HOME/.oh-my-zsh"
+  COMPLETION_WAITING_DOTS="true"
+  plugins=(
+    git
+    history
+    zsh-autosuggestions
+    tmux
+    z
+  )
 
-ZSH_THEME="my"
-
-COMPLETION_WAITING_DOTS="true"
-plugins=(
-  git
-  history
-  zsh-autosuggestions
-  tmux
-  z
-)
 
 if command -v virtualenvwrapper.sh &> /dev/null; then
   export WORKON_HOME=$HOME/.local/venv
   export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-  plugins=($plugins virtualenvwrapper)
+  # plugins=($plugins virtualenvwrapper)
   if [[ ! -d $WORKON_HOME ]]; then
     mkdir -p $WORKON_HOME
   fi
@@ -150,7 +155,6 @@ if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
 
-
 # ALIASES
 
 ggg() {
@@ -215,3 +219,5 @@ fi
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH=$PATH:"/Users/bkampen/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
