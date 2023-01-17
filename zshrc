@@ -113,6 +113,10 @@ if command -v velero &>/dev/null; then
   source <(velero completion zsh)
 fi
 
+if command -v kubebuilder &>/dev/null; then
+  source <(kubebuilder completion zsh)
+fi
+
 if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
