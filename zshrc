@@ -97,6 +97,10 @@ if [[ -f ~/.govc ]]; then
   source ~/.govc
 fi
 
+if [[ -f ~/.vcenter-credentials ]]; then
+  source ~/.vcenter-credentials
+fi
+
 if command -v kubectl &> /dev/null; then
   source <(kubectl completion zsh)
   alias k=kubectl
@@ -207,6 +211,10 @@ fi
 
 if [[ -f /usr/bin/bat ]]; then
   alias cat="/usr/bin/bat --paging=never"
+fi
+
+if [[ -f /opt/homebrew/bin/tilt ]]; then
+  alias tilt="/opt/homebrew/bin/tilt"
 fi
 
 
