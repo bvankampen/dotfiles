@@ -58,6 +58,10 @@ if [[ -d $HOME/.cargo/bin ]]; then
   export PATH=$PATH:$HOME/.cargo/bin
 fi
 
+if [[ -d $HOME/.krew ]]; then
+  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
   # OH-MY-ZSH CONFIG
   export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
   export ZSH="$HOME/.oh-my-zsh"
