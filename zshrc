@@ -19,6 +19,7 @@ export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 
 if [[ $OS == "Darwin" ]]; then
   export PATH=$PATH:/opt/homebrew/opt/mysql-client/bin:
+  export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
   export LC_CTYPE=en_US.UTF-8
   export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 fi
