@@ -4,6 +4,9 @@ return {
       ansible = {
         useFullyQualifiedCollectionNames = false,
       },
+      validation = {
+        lint = { enabled = false }
+      }
     },
   },
 }
