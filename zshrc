@@ -222,6 +222,10 @@ if [[ -f /usr/bin/bat ]]; then
   alias cat="/usr/bin/bat --paging=never"
 fi
 
+if [[ -f $HOME/.local/bin/bat ]]; then
+  alias cat="$HOME/.local/bin/bat --paging=never"
+fi
+
 if [[ -f /opt/homebrew/bin/tilt ]]; then
   alias tilt="/opt/homebrew/bin/tilt"
 fi
