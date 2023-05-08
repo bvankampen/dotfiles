@@ -126,6 +126,10 @@ if command -v kubebuilder &>/dev/null; then
   source <(kubebuilder completion zsh)
 fi
 
+if command -v dagger &>/dev/null; then
+  source <(dagger completion zsh)
+fi
+
 if command -v atuin &>/dev/null; then
   eval "$(atuin init zsh --disable-up-arrow)"
 fi
