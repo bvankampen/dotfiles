@@ -1,3 +1,6 @@
+# Helix Editor Config
+# https://helix-editor.com/
+
 theme = "onedark"
 
 [editor]
