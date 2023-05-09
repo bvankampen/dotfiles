@@ -2,6 +2,17 @@ theme = "onedark"
 
 [editor]
 line-number = "relative"
+bufferline = "always"
+true-color = true
+
+[editor.statusline]
+left = ["mode", "version-control", "spinner","file-name","file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.cursor-shape]
 insert = "bar"
