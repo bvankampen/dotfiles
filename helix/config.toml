@@ -8,7 +8,7 @@ line-number = "relative"
 bufferline = "always"
 true-color = true
 cursorline = true
-rulers = [80]
+# rulers = [80]
 color-modes =  true
 
 [editor.statusline]
