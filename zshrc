@@ -10,6 +10,11 @@ if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   export SESSION_TYPE="remote/ssh"
 fi
 
+# Temp fix for locale issue
+# if [[ $HOSTNAME == 'geeko.lan.ping6.nl' ]]; then
+  # export LC_ALL=C.UTF-8
+# fi
+
 # COMPINIT
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
@@ -62,6 +67,13 @@ fi
 if [[ -d $HOME/.krew ]]; then
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
+
+
+if [[ -d $HOME/.pulumi ]]; then
+  export PATH=$PATH:$HOME/.pulumi/bin
+  source <(pulumi gen-completion zsh)
+fi
+
 
   # OH-MY-ZSH CONFIG
   export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
@@ -250,3 +262,7 @@ export PATH=$PATH:"/Users/bkampen/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/p10k.zsh.
+[[ ! -f ~/.dotfiles/p10k.zsh ]] || source ~/.dotfiles/p10k.zsh
+
