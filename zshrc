@@ -71,6 +71,11 @@ fi
 
 if [[ -d $HOME/.pulumi ]]; then
   export PATH=$PATH:$HOME/.pulumi/bin
+  alias pu="pulumi up -y"
+  alias pd="pulumi down -y"
+  alias pp="pulumi preview"
+  alias pr="pulumi refresh"
+  alias puu="pulumi update -y"
   source <(pulumi gen-completion zsh)
 fi
 
