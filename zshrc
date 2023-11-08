@@ -69,7 +69,7 @@ if [[ -d $HOME/.krew ]]; then
 fi
 
 
-if [[ -d $HOME/.pulumi ]]; then
+if command -v pulumi &> /dev/null; then
   export PATH=$PATH:$HOME/.pulumi/bin
   alias pu="pulumi up -y"
   alias pd="pulumi down -y"
@@ -78,6 +78,7 @@ if [[ -d $HOME/.pulumi ]]; then
   alias puu="pulumi update -y"
   source <(pulumi gen-completion zsh)
 fi
+
 
 
   # OH-MY-ZSH CONFIG
