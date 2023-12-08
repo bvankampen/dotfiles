@@ -69,7 +69,7 @@ if [[ -d $HOME/.krew ]]; then
 fi
 
 
-if command -v pulumi &> /dev/null; then
+if [[ -d $HOME/.pulumi ]] then
   export PATH=$PATH:$HOME/.pulumi/bin
   alias pu="pulumi up -y"
   alias pd="pulumi down -y"
@@ -270,5 +270,5 @@ export PATH=$PATH:"/Users/bkampen/.rd/bin"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/p10k.zsh.
-[[ ! -f ~/.dotfiles/p10k.zsh ]] || source ~/.dotfiles/p10k.zsh
+# [[ ! -f ~/.dotfiles/p10k.zsh ]] || source ~/.dotfiles/p10k.zsh
 
