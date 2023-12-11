@@ -30,6 +30,14 @@ if [[ $OS == "Darwin" ]]; then
 fi
 
 
+if [[ -d $HOME/code/pico/pico-sdk ]]; then
+  export PICO_SDK_PATH=$HOME/code/pico/pico-sdk
+fi
+
+if [[ -d /opt/homebrew/var/homebrew/linked/texinfo ]]; then
+  export PATH=$PATH:/opt/homebrew/var/homebrew/linked/texinfo/bin
+fi
+
 if command -v docker &> /dev/null; then
   export DOCKER_BUILDKIT=1
 fi
@@ -264,7 +272,7 @@ fi
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH=$PATH:"/Users/bkampen/.rd/bin"
+export PATH="/Users/bas/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
