@@ -1,6 +1,7 @@
 # Global
 __pycache__
 **/.DS_Store
+**/*DS_Store
 
 # VSCode
 .vscode
@@ -12,3 +13,5 @@ __pycache__
 **/*.tfvars
 !example.tfvars
 
+# syncthing
+.stfolder
