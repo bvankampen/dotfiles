@@ -2,7 +2,7 @@ OS=`uname`
 HOSTNAME=`hostname`
 TMUX=0
 ZPROF=1
-PULUMI=0
+PULUMI=1
 
 if [[ $ZPROF == 1 ]]; then
   zmodload zsh/zprof
@@ -85,6 +85,7 @@ fi
 
 if [[ -d $HOME/.pulumi && $PULUMI == 1 ]] then
   export PATH=$PATH:$HOME/.pulumi/bin
+  export PULUMI_SKIP_UPDATE_CHECK=1
   alias pu="pulumi up -y"
   alias pd="pulumi down -y"
   alias pp="pulumi preview"
