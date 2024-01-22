@@ -1,6 +1,12 @@
 OS=`uname`
 HOSTNAME=`hostname`
 TMUX=0
+ZPROF=1
+PULUMI=0
+
+if [[ $ZPROF == 1 ]]; then
+  zmodload zsh/zprof
+fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -77,7 +83,7 @@ if [[ -d $HOME/.krew ]]; then
 fi
 
 
-if [[ -d $HOME/.pulumi ]] then
+if [[ -d $HOME/.pulumi && $PULUMI == 1 ]] then
   export PATH=$PATH:$HOME/.pulumi/bin
   alias pu="pulumi up -y"
   alias pd="pulumi down -y"
@@ -276,3 +282,7 @@ export PATH="/Users/bas/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [[ $ZPROF == 1 ]]; then
+  zprof > $HOME/.zprof
+fi
