@@ -3,6 +3,7 @@ HOSTNAME=`hostname`
 TMUX=0
 ZPROF=1
 PULUMI=1
+VIRTENVWRAPPER=0
 
 if [[ $ZPROF == 1 ]]; then
   zmodload zsh/zprof
@@ -112,14 +113,16 @@ fi
   )
 
 
-if command -v virtualenvwrapper.sh &> /dev/null; then
-  export WORKON_HOME=$HOME/.local/venv
-  export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-  # plugins=($plugins virtualenvwrapper)
-  if [[ ! -d $WORKON_HOME ]]; then
-    mkdir -p $WORKON_HOME
+if [[ $VIRTENVWRAPPER == 1 ]]; then
+  if command -v virtualenvwrapper.sh &> /dev/null; then
+    export WORKON_HOME=$HOME/.local/venv
+    export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+    # plugins=($plugins virtualenvwrapper)
+      if [[ ! -d $WORKON_HOME ]]; then
+        mkdir -p $WORKON_HOME
+      fi
+    source virtualenvwrapper.sh
   fi
-  source virtualenvwrapper.sh
 fi
 
 if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' && $KONSOLE != "1" && $TMUX==1 ]]; then
