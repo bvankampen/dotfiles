@@ -19,7 +19,7 @@ return function()
       extension = {
         yml = yaml_ft,
         yaml = yaml_ft,
-        j2 = yaml_ft,
+        j2 = "yaml",
       },
     }
 end
