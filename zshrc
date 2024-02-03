@@ -270,6 +270,10 @@ if [[ -f /opt/homebrew/bin/tilt ]]; then
   alias tilt="/opt/homebrew/bin/tilt"
 fi
 
+if [[ $HOSTNAME == 'xenon' ]]; then
+  # special stuff for xenon
+  export PATH=$PATH:$HOME/Sync/work/code/scripts:$HOME/Sync/private/code/scripts
+fi
 
 # if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then
 #   source "${HOME}/.iterm2_shell_integration.zsh"
