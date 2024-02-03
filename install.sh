@@ -45,7 +45,10 @@ ln -sf ~/.dotfiles/my.zsh-theme ~/.oh-my-zsh/custom/themes/my.zsh-theme
 git config --global core.excludesfile ~/.dotfiles/gitignore
 
 # NVIM
-ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
+# ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
+
+# Astronvim User Config
+ln -sf  ~/.dotfiles/astrovim_config/ ~/.config/nvim/lua/user
 
 # powerline10k
 # https://github.com/romkatv/powerlevel10
