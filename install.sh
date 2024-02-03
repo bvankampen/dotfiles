@@ -50,6 +50,7 @@ git config --global core.excludesfile ~/.dotfiles/gitignore
 # Astronvim User Config
 ln -sf  ~/.dotfiles/astrovim_config/ ~/.config/nvim/lua/user
 
+
 # powerline10k
 # https://github.com/romkatv/powerlevel10
 
