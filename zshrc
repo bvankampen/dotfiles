@@ -1,6 +1,6 @@
 OS=`uname`
 HOSTNAME=`hostname`
-TMUX=0
+START_TMUX=1
 ZPROF=1
 PULUMI=1
 VIRTENVWRAPPER=0
@@ -15,6 +15,8 @@ fi
 
 if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   export SESSION_TYPE="remote/ssh"
+else
+  export SESSION_TYPE="local"
 fi
 
 # Temp fix for locale issue
@@ -97,21 +99,20 @@ fi
 
 
 
-  # OH-MY-ZSH CONFIG
-  export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-  export ZSH="$HOME/.oh-my-zsh"
+# OH-MY-ZSH CONFIG
+export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+export ZSH="$HOME/.oh-my-zsh"
 
-  ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-  COMPLETION_WAITING_DOTS="true"
-  plugins=(
-    git
-    history
-    zsh-autosuggestions
-    tmux
-    z
-  )
-
+COMPLETION_WAITING_DOTS="true"
+plugins=(
+  git
+  history
+  zsh-autosuggestions
+  tmux
+  z
+)
 
 if [[ $VIRTENVWRAPPER == 1 ]]; then
   if command -v virtualenvwrapper.sh &> /dev/null; then
@@ -125,9 +126,10 @@ if [[ $VIRTENVWRAPPER == 1 ]]; then
   fi
 fi
 
-if [[ $SESSION_TYPE != 'remote/ssh' && $ITERM_PROFILE != 'NO_TMUX' && $KONSOLE != "1" && $TMUX==1 ]]; then
+if [[ $SESSION_TYPE != 'remote/ssh' && $START_TMUX==1 ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOCONNECT=false
+  #ZSH_TMUX_ITERM2=true
 fi
 
 source $ZSH/oh-my-zsh.sh

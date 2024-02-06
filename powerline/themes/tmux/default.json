@@ -16,7 +16,7 @@
 					}
 			},
 			{
-				"function": "powerline.segments.common.sys.uptime",
+			  "function": "powerline.segments.common.sys.uptime",
 				"priority": 50
 			},
 			{
