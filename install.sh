@@ -2,54 +2,40 @@
 
 cd $HOME
 
-if [[ `uname` = 'Linux' ]]; then
-  sudo apt install vim python3-pip
-fi
-
+# fonts
 if [[ `uname` = 'Linux' && -d /usr/lib/xsessions ]]; then
-  sudo apt install xclip kitty
   if [[ -d $HOME/.local/share/fonts ]]; then
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
-    unzip JetBrainsMono.zip JetBrains\ Mono\ Regular\ Nerd\ Font\ Complete.ttf -d .local/share/fonts
+    cp -v $HOME/.dotfiles/fonts $HOME/.local/share/fonts
     fc-cache -f
-    rm JetBrainsMono.zip
   fi
 fi
 
-## if [[ `uname` = 'Darwin' ]]; then
-  ##
-## fi
+# oh-my-zsh config
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+ln -sf $HOME/.dotfiles/my.zsh-theme $HOME/.oh-my-zsh/custom/themes/my.zsh-theme
+
+# tmux config
+pip install powerline-status
+ln -sf $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
 
 # Add current Kubernetes cluster to powerline status
 if command -v kubectl &> /dev/null; then
   pip install powerk8s
-  ln -sf ~/.dotfiles/powerline ~/.config/powerline
+  ln -sf $HOME/.dotfiles/powerline $HOME/.config/powerline
 fi
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Default gitignore
+git config --global core.excludesfile $HOME/.dotfiles/gitignore
 
-pip install powerline-status
-
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-mkdir ~/.local/vimtmp
-mkdir ~/.vim
-
-ln -sf ~/.dotfiles/vimconfig ~/.config/vim
-ln -sf ~/.dotfiles/kitty ~/.config/kitty
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/vimconfig/coc-settings.json ~/.vim/coc-settings.json
-ln -sf ~/.dotfiles/my.zsh-theme ~/.oh-my-zsh/custom/themes/my.zsh-theme
-git config --global core.excludesfile ~/.dotfiles/gitignore
-
-# NVIM
-ln -sf ~/.dotfiles/nvim/ ~/.config/nvim
+# ASTRONVIM
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim $HOME/.config/nvim
+ln -sf $HOME/.dotfiles/astrovim_config $HOME/.config/nvim/lua/user
 
 # powerline10k
 # https://github.com/romkatv/powerlevel10
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-ln -sf ~/.dotfiles/p10k.zsh ~/.p10k.zsh
+ln -sf $HOME/.dotfiles/p10k.zsh $HOME/.p10k.zsh
 
