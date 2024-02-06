@@ -126,7 +126,7 @@ if [[ $VIRTENVWRAPPER == 1 ]]; then
   fi
 fi
 
-if [[ $SESSION_TYPE != 'remote/ssh' && $START_TMUX==1 ]]; then
+if [[ $SESSION_TYPE != 'remote/ssh' && $START_TMUX == 1 ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOCONNECT=false
   #ZSH_TMUX_ITERM2=true
@@ -270,6 +270,10 @@ fi
 
 if [[ -f /opt/homebrew/bin/tilt ]]; then
   alias tilt="/opt/homebrew/bin/tilt"
+fi
+
+if [[ -f /etc/profile.d/vte.sh ]]; then
+  source /etc/profile.d/vte.sh
 fi
 
 if [[ $HOSTNAME == 'xenon' ]]; then
