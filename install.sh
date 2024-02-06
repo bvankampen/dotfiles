@@ -29,9 +29,6 @@ fi
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
 
-# ASTRONVIM
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim $HOME/.config/nvim
-ln -sf $HOME/.dotfiles/astrovim_config $HOME/.config/nvim/lua/user
 
 # powerline10k
 # https://github.com/romkatv/powerlevel10
