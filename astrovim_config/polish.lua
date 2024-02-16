@@ -22,4 +22,8 @@ return function()
         j2 = "yaml",
       },
     }
+
+  vim.cmd.aunmenu{'PopUp.How-to\\ disable\\ mouse'}
+  vim.cmd.aunmenu{'PopUp.-1-' }
+  
 end
