@@ -29,6 +29,19 @@ fi
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
 
+# misc tools
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install atuin
+cargo install tree-sitter-cli
+cargo install ripgrep
+cargo install bottom
+
+if [[ $(uname) == "Linux" ]]; then
+  sudo zypper install lazygit
+fi
+if [[ $(uname) == "Darwin "]]; then
+  brew install lazygit
+fi
 
 # powerline10k
 # https://github.com/romkatv/powerlevel10
