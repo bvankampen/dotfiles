@@ -202,12 +202,21 @@ if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
-if command -v terraform &> /dev/null; then
-  alias tf=terraform
-  alias tfa="terraform apply --auto-approve"
-  alias tfd="terraform destroy --auto-approve"
-  complete -o nospace -C `which terraform` terraform
-  complete -o nospace -C `which terraform` tf
+
+if command -v tofu &> /dev/null; then
+  alias tf=tofu
+  alias tfa="tofu apply --auto-approve"
+  alias tfd="tofu destroy --auto-approve"
+  complete -o nospace -C `which tofu` terraform
+  complete -o nospace -C `which tofu` tf
+else
+  if command -v terraform &> /dev/null; then
+    alias tf=terraform
+    alias tfa="terraform apply --auto-approve"
+    alias tfd="terraform destroy --auto-approve"
+    complete -o nospace -C `which terraform` terraform
+    complete -o nospace -C `which terraform` tf
+  fi
 fi
 
 if [[ -f ~/.local/local.env ]]; then
