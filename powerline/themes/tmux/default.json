@@ -2,6 +2,15 @@
 	"segments": {
 		"right": [
 			{
+				"function": "powerline.segments.common.env.environment",
+				"priority": 30,
+				"before": "󰋜 ",
+				"after": "",
+				"args": {
+					"variable": "SWSTATE"
+				}
+			},
+			{
 				"function": "powerk8s.powerk8s",
 				"priority": 30,
 				"args": {

@@ -2,6 +2,8 @@
 	"name": "default",
 	"groups": {
 		"active_window_status": {"fg": "darkestcyan",   "bg": "gray0",    "attrs": []},
+		"environment": {"fg": "gray10",   "bg": "gray2",    "attrs": []},
+		"uptime": {"fg": "gray10",   "bg": "gray2",    "attrs": []},
 		"window_status":        {"fg": "gray70",     "bg": "gray0",    "attrs": []},
 		"activity_status":      {"fg": "yellow",     "bg": "gray0",    "attrs": []},
 		"bell_status":          {"fg": "red",        "bg": "gray0",    "attrs": []},

@@ -223,6 +223,13 @@ if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
 
+if [[ $HOSTNAME="xenon" ]]; then
+  if command -v tmux &> /dev/null; then
+    STATE=`cat $HOME/.config/.switch-state`
+    tmux set-environment -g SWSTATE ${STATE:u}
+  fi
+fi
+
 # ALIASES
 
 ggg() {
