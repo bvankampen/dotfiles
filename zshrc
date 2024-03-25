@@ -67,6 +67,10 @@ if [[ -d $HOME/code/scripts ]]; then
   export PATH=$PATH:$HOME/code/scripts
 fi
 
+if [[ -f /opt/nvim-linux64/bin/nvim ]]; then
+  export PATH="$PATH:/opt/nvim-linux64/bin"
+fi
+
 if [[ $OS == 'Darwin' ]]; then
   if command -v rbenv &> /dev/null; then
     eval "$(rbenv init -)"
@@ -308,7 +312,7 @@ fi
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/bas/.rd/bin:$PATH"
+export PATH="/Users/bkampen/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
