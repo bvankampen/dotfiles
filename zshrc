@@ -296,6 +296,10 @@ if [[ -f /etc/profile.d/vte.sh ]]; then
   source /etc/profile.d/vte.sh
 fi
 
+if command -v minicom &> /dev/null; then
+  alias minicom="minicom -m meta"
+fi
+
 if [[ $HOSTNAME == 'xenon' ]]; then
   # special stuff for xenon
   export PATH=$PATH:$HOME/Sync/work/code/scripts:$HOME/Sync/private/code/scripts
