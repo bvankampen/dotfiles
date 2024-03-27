@@ -63,8 +63,16 @@ if [[ -d /usr/local/go || -f /usr/bin/go ]]; then
   export PATH=$PATH:$GOPATH/bin
 fi
 
+if [[ -d $HOME/scripts ]]; then
+  export PATH=$PATH:$HOME/scripts
+fi
+
 if [[ -d $HOME/code/scripts ]]; then
   export PATH=$PATH:$HOME/code/scripts
+fi
+
+if [[ -d $HOME/.local/scripts ]]; then
+  export PATH=$PATH:$HOME/.local/scripts
 fi
 
 if [[ $OS == 'Darwin' ]]; then
