@@ -71,13 +71,12 @@ if [[ -d $HOME/code/scripts ]]; then
   export PATH=$PATH:$HOME/code/scripts
 fi
 
-<<<<<<< HEAD
 if [[ -d $HOME/.local/scripts ]]; then
   export PATH=$PATH:$HOME/.local/scripts
-=======
+fi
+
 if [[ -f /opt/nvim-linux64/bin/nvim ]]; then
   export PATH="$PATH:/opt/nvim-linux64/bin"
->>>>>>> 3ce93ab3614350d1ad9d137dc189afc3caf37713
 fi
 
 if [[ $OS == 'Darwin' ]]; then
