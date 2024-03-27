@@ -71,8 +71,13 @@ if [[ -d $HOME/code/scripts ]]; then
   export PATH=$PATH:$HOME/code/scripts
 fi
 
+<<<<<<< HEAD
 if [[ -d $HOME/.local/scripts ]]; then
   export PATH=$PATH:$HOME/.local/scripts
+=======
+if [[ -f /opt/nvim-linux64/bin/nvim ]]; then
+  export PATH="$PATH:/opt/nvim-linux64/bin"
+>>>>>>> 3ce93ab3614350d1ad9d137dc189afc3caf37713
 fi
 
 if [[ $OS == 'Darwin' ]]; then
@@ -231,7 +236,7 @@ if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
 
-if [[ $HOSTNAME="xenon" ]]; then
+if [[ $HOSTNAME == "xenon" ]]; then
   if command -v tmux &> /dev/null; then
     STATE=`cat $HOME/.config/.switch-state`
     tmux set-environment -g SWSTATE ${STATE:u}
@@ -316,7 +321,7 @@ fi
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/bas/.rd/bin:$PATH"
+export PATH="/Users/bkampen/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
