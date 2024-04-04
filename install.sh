@@ -26,6 +26,9 @@ if command -v kubectl &> /dev/null; then
   ln -sf $HOME/.dotfiles/powerline $HOME/.config/powerline
 fi
 
+#astronvim
+ln -s ~/.dotfiles/astronvim/ ~/.config/nvim
+
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
 
@@ -48,4 +51,3 @@ fi
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ln -sf $HOME/.dotfiles/p10k.zsh $HOME/.p10k.zsh
-
