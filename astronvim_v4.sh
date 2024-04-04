@@ -9,3 +9,5 @@ rm -rf ~/.local/state/nvim
 rm -rf ~/.cache/nvim
 
 git clone git@github.com:bvankampen/astronvim_v4_config.git ~/.config/nvim
+
+nvim --headless -c 'quitall'
