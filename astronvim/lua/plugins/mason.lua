@@ -19,7 +19,7 @@ return {
         "bashls",
         "yamlls",
         "jinja_lsp",
-        "jsonls"       
+        "jsonls",
       })
     end,
   },
@@ -32,6 +32,9 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "prettier",
         "stylua",
+        "hclfmt",
+        "goimports",
+        "gofumpt",
         -- add more arguments for adding more null-ls sources
       })
     end,
@@ -49,10 +52,10 @@ return {
   },
   {
     "cappyzawa/trim.nvim",
-    config=true,
+    config = true,
   },
   {
     "lukoshkin/highlight-whitespace",
-    config=true,
-  }
+    config = true,
+  },
 }
