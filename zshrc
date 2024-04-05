@@ -201,7 +201,7 @@ if command -v vagrant &> /dev/null; then
 fi
 
 if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
-  source ~/.dotfiles/zsh/titles.plugin.zsh 
+  source ~/.dotfiles/zsh/titles.plugin.zsh
 fi
 
 if command -v helm &>/dev/null; then
