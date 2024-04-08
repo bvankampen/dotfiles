@@ -38,6 +38,7 @@ cargo install atuin
 cargo install tree-sitter-cli
 cargo install ripgrep
 cargo install bottom
+cargo install lsd
 
 if [[ $(uname) == "Linux" ]]; then
   sudo zypper install lazygit
