@@ -54,8 +54,8 @@ return {
     "cappyzawa/trim.nvim",
     config = true,
   },
-  {
-    "lukoshkin/highlight-whitespace",
-    config = true,
-  },
+  -- {
+  --   "lukoshkin/highlight-whitespace",
+  --   config = true,
+  -- },
 }
