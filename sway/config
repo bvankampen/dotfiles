@@ -9,8 +9,8 @@ exec_always $HOME/.local/scripts/swaydisplay.sh
 
 ### Variables
 #
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
+# Logo key. Use Mod1 for Alt. Mod4 for Logo Key
+set $mod Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -29,24 +29,6 @@ set $term alacritty --config-file ~/.config/alacritty/alacritty.toml
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * bg /usr/share/wallpapers/openSUSEdefault/contents/images/5120x3200.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-exec swayidle -w \
-         timeout 900 'swaylock -f -c 000000' \
-         timeout 1800 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
-
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 
 ### Key bindings
 #
@@ -190,24 +172,18 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 # it is set in config.d/50-openSUSE.conf
-#bar {
-#    position top
-#
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-#
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
 
 # custom add by Bas
 
 bindsym $mod+Shift+m exec swaymsg 'output eDP-1 toggle'
+bindsym Print mode $screenshot
+
 exec wl-paste -t text --watch clipman store --no-persist
+
+gaps inner 2
+gaps outer 2
+
+for_window [class="Google-chrome" title="Bitwarden"] floating enable
 
 include /etc/sway/config.d/*.conf
 include ~/.config/sway/config.d/*
