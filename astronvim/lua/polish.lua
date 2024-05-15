@@ -14,7 +14,7 @@ local function yaml_ft(path, bufnr)
   return "yaml"
 end
 
-vim.filetype.add({
+vim.filetype.add {
   extension = {
     yml = yaml_ft,
     yaml = yaml_ft,
@@ -23,9 +23,10 @@ vim.filetype.add({
     [".*%.xml%.j2"] = "xml",
     [".*%.yml%.j2"] = "yaml",
     [".*%.yaml%.j2"] = "yaml",
-  }
-})
+    [".*%.yaml%.tftpl"] = "tftpl.yaml",
+    [".*%.json%.tftpl"] = "tftpl.json",
+  },
+}
 
-vim.cmd.aunmenu{'PopUp.How-to\\ disable\\ mouse'}
-vim.cmd.aunmenu{'PopUp.-1-' }
-
+vim.cmd.aunmenu { "PopUp.How-to\\ disable\\ mouse" }
+vim.cmd.aunmenu { "PopUp.-1-" }
