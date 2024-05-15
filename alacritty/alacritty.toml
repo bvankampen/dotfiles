@@ -1,0 +1,12 @@
+[font]
+size = 13.0
+
+[font.normal]
+family = "BlexMono Nerd Font"
+
+[window]
+opacity = 0.4
+
+[window.padding]
+x = 5
+y = 5
