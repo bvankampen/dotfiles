@@ -168,22 +168,21 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# it is set in config.d/50-openSUSE.conf
-
-# custom add by Bas
-
-bindsym $mod+Shift+m exec swaymsg 'output eDP-1 toggle'
-bindsym Print mode $screenshot
-
-exec wl-paste -t text --watch clipman store --no-persist
-
-gaps inner 2
-gaps outer 2
-
 for_window [class="Google-chrome" title="Bitwarden"] floating enable
 
 include /etc/sway/config.d/*.conf
 include ~/.config/sway/config.d/*
+
+# custom added by Bas
+
+bindsym $mod+Shift+m exec swaymsg 'output eDP-1 toggle'
+bindsym Print mode $screenshot
+
+# exec wl-paste -t text --watch clipman store --histpath="~/.cache/clipman.json" --no-persist
+# bindsym $mod+y exec clipman pick --tool "wofi" --histpath="~/.cache/clipman.json" --max-items=30
+
+exec wl-paste --watch cliphist store
+bindsym $mod+y exec cliphist list | wofi -S dmenu --conf=/etc/wofi/config --style=/etc/wofi/style.css | cliphist decode | wl-copy
+
+gaps inner 2
+gaps outer 2
