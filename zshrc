@@ -138,6 +138,10 @@ if [[ $VIRTENVWRAPPER == 1 ]]; then
   fi
 fi
 
+if [[ $XDG_SESSION_DESKTOP == 'sway' ]]; then
+ START_TMUX=0
+fi
+
 if [[ $SESSION_TYPE != 'remote/ssh' && $START_TMUX == 1 ]]; then
   ZSH_TMUX_AUTOSTART=true
   ZSH_TMUX_AUTOCONNECT=false
@@ -238,7 +242,7 @@ if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
 
-if [[ $HOSTNAME == "xenon" ]]; then
+if [[ $HOSTNAME == "xenon" && $START_TMUX == 1 ]]; then
   if command -v tmux &> /dev/null; then
     STATE=`cat $HOME/.config/.switch-state`
     tmux set-environment -g SWSTATE ${STATE:u}
