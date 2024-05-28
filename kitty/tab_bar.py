@@ -74,7 +74,7 @@ def draw_right_status(draw_data: DrawData, screen: Screen) -> None:
 
 def create_cells():
     cells = [
-        get_swstate(),
+        get_state(),
         get_context(),
         get_uptime(),
         get_hostname()
@@ -98,7 +98,7 @@ def get_hostname():
         return { "icon": "󰋜", "color": "#28B2A3", "text": out }
     else:
         return None
-    
+
 def get_uptime():
     out = subprocess.getoutput("uptime | sed 's/.*up \\([^,]*\\), .*/\\1/'")
 
@@ -107,8 +107,12 @@ def get_uptime():
     else:
         return None
 
-def get_swstate():
-    out = os.getenv("SWSTATE")
+def get_state():
+    state_file = os.path.expanduser("~/.config/.switch-state")
+    if os.path.exists(state_file):
+        out = subprocess.getoutput(f"cat {state_file}")
+    else:
+        out = None
 
     if out is not None:
         return { "icon": "", "color": "#28B2A3", "text": out }
@@ -126,5 +130,3 @@ def get_context():
 def _redraw_tab_bar(timer_id):
     for tm in get_boss().all_tab_managers:
         tm.mark_tab_bar_dirty()
-
-
