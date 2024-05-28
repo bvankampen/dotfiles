@@ -5,6 +5,10 @@ ZPROF=1
 PULUMI=1
 VIRTENVWRAPPER=0
 
+if [[ -f ~/.local/local.env ]]; then
+    source ~/.local/local.env
+fi
+
 if [[ $ZPROF == 1 ]]; then
   zmodload zsh/zprof
 fi
@@ -138,6 +142,12 @@ if [[ $VIRTENVWRAPPER == 1 ]]; then
   fi
 fi
 
+if [[ $TERM == 'xterm-kitty' ]]; then
+    alias diff="kitten diff"
+    alias ssh="kitty +kitten ssh"
+    START_TMUX=0
+fi
+
 if [[ $XDG_SESSION_DESKTOP == 'sway' ]]; then
  START_TMUX=0
 fi
@@ -238,9 +248,6 @@ else
   fi
 fi
 
-if [[ -f ~/.local/local.env ]]; then
-    source ~/.local/local.env
-fi
 
 if [[ $HOSTNAME == "xenon" && $START_TMUX == 1 ]]; then
   if command -v tmux &> /dev/null; then
@@ -274,6 +281,9 @@ clicolors() {
     echo $c | sed 's/%//g' | sed 's/{//g' | sed 's/}//g' | sed '$s/..$//';
     c=''
 }
+
+if [[ $TERM == 1 ]]; then
+fi
 
 if command -v nvim &> /dev/null; then
   alias vim="nvim"
