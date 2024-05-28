@@ -143,7 +143,7 @@ if [[ $VIRTENVWRAPPER == 1 ]]; then
 fi
 
 if [[ $TERM == 'xterm-kitty' ]]; then
-    alias diff="kitten diff"
+    alias kdiff="kitten diff"
     alias ssh="kitty +kitten ssh"
     START_TMUX=0
 fi
