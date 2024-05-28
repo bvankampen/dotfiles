@@ -2,7 +2,7 @@ OS=`uname`
 HOSTNAME=`hostname`
 START_TMUX=1
 ZPROF=1
-PULUMI=1
+PULUMI=0
 VIRTENVWRAPPER=0
 
 if [[ -f ~/.local/local.env ]]; then
