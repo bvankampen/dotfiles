@@ -144,7 +144,7 @@ fi
 
 if [[ $TERM == 'xterm-kitty' ]]; then
     alias kdiff="kitten diff"
-    alias ssh="kitty +kitten ssh"
+    alias ssh="TERM=xterm-256color ssh"
     START_TMUX=0
 fi
 
