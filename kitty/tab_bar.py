@@ -32,8 +32,8 @@ def draw_tab(
 ) -> int:
     global timer_id
 
-    if timer_id is None:
-        timer_id = add_timer(_redraw_tab_bar, 2.0, True)
+    # if timer_id is None:
+        # timer_id = add_timer(_redraw_tab_bar, 2.0, True)
     draw_tab_with_powerline(
         draw_data, screen, tab, before, max_title_length, index, is_last, extra_data
     )
