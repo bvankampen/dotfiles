@@ -76,7 +76,7 @@ def create_cells():
     cells = [
         get_state(),
         get_context(),
-        get_uptime(),
+        # get_uptime(),
         get_hostname()
     ]
     return [c for c in cells if c is not None]
