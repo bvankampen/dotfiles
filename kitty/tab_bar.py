@@ -75,7 +75,7 @@ def draw_right_status(draw_data: DrawData, screen: Screen) -> None:
 def create_cells():
     cells = [
         get_state(),
-        get_context(),
+        # get_context(),
         # get_uptime(),
         get_hostname()
     ]
