@@ -4,6 +4,7 @@ import subprocess
 import os
 from collections import defaultdict
 from time import time
+import time
 
 from kitty.boss import get_boss
 from kitty.fast_data_types import Screen, add_timer, get_options
@@ -101,7 +102,6 @@ def get_hostname():
 
 def get_uptime():
     out = subprocess.getoutput("uptime | sed 's/.*up \\([^,]*\\), .*/\\1/'")
-
     if len(out) > 0:
         return { "icon": "", "color": "#28B2A3", "text": out }
     else:
