@@ -75,7 +75,7 @@ def draw_right_status(draw_data: DrawData, screen: Screen) -> None:
 def create_cells():
     cells = [
         get_state(),
-        # get_context(),
+        get_context(),
         # get_uptime(),
         get_hostname()
     ]
@@ -121,7 +121,8 @@ def get_state():
 
 
 def get_context():
-    out = subprocess.getoutput("~/.local/bin/kubectl config current-context")
+    # out = subprocess.getoutput("~/.local/bin/kubectl config current-context")
+    out = subprocess.getoutput("cat ~/.kube/config | grep current-context | awk '{ print $2 }'")
     if len(out) > 0:
         return { "icon": "󱃾", "color": "#28B2A3", "text": out }
     else:
