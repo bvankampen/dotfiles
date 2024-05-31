@@ -12,7 +12,7 @@ if [[ $HOSTNAME == "dev" ]]; then
   unfunction kitty-integration
 fi
 
-if [[ -n "$KITTY_INSTALLATION_DIR" || $HOSTNAME == "dev" ]]; then
+if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
   export KITTY_SHELL_INTEGRATION="enabled"
   autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
   kitty-integration
