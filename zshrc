@@ -7,7 +7,7 @@ VIRTENVWRAPPER=0
 
 if [[ $HOSTNAME == "dev" ]]; then
   export KITTY_SHELL_INTEGRATION="enabled"
-  autoload -Uz -- $HOME/.dotfiles/kitty/kitty-integration
+  autoload -Uz -- $HOME/.dotfiles/kitty/shell-integration/kitty-integration
   kitty-integration
   unfunction kitty-integration
 fi
