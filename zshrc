@@ -5,10 +5,16 @@ ZPROF=1
 PULUMI=0
 VIRTENVWRAPPER=0
 
-if [[ -n "$KITTY_INSTALLATION_DIR" || $HOSTNAME == "dev" ]]; then
+if [[ $HOSTNAME == "dev" ]]; then
   export KITTY_SHELL_INTEGRATION="enabled"
   autoload -Uz -- $HOME/.dotfiles/kitty/kitty-integration
-  # autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+  kitty-integration
+  unfunction kitty-integration
+fi
+
+if [[ -n "$KITTY_INSTALLATION_DIR" || $HOSTNAME == "dev" ]]; then
+  export KITTY_SHELL_INTEGRATION="enabled"
+  autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
   kitty-integration
   unfunction kitty-integration
 fi
