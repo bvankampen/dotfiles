@@ -4,21 +4,11 @@ START_TMUX=1
 ZPROF=1
 PULUMI=0
 VIRTENVWRAPPER=0
-#
-# if [[ $HOSTNAME == "dev" ]]; then
-#   export KITTY_SHELL_INTEGRATION="enabled"
-#   autoload -Uz -- $HOME/.dotfiles/kitty/shell-integration/kitty-integration
-#   kitty-integration
-#   unfunction kitty-integration
-# fi
-#
-# if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
-#   export KITTY_SHELL_INTEGRATION="enabled"
-#   autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
-#   kitty-integration
-#   unfunction kitty-integration
-# fi
-#
+
+if [[ $HOSTNAME == "dev" ]]; then
+  DISABLE_AUTO_TuITLE="true"
+fi
+
 if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
@@ -231,9 +221,9 @@ if command -v vagrant &> /dev/null; then
   fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 fi
 
-if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
-  source ~/.dotfiles/zsh/titles.plugin.zsh
-fi
+# if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
+  # source ~/.dotfiles/zsh/titles.plugin.zsh
+# fi
 
 if command -v helm &>/dev/null; then
   source <(helm completion zsh)
