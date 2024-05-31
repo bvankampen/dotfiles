@@ -5,10 +5,6 @@ ZPROF=1
 PULUMI=0
 VIRTENVWRAPPER=0
 
-# if [[ $HOSTNAME == "dev" ]]; then
-#   DISABLE_AUTO_TITLE="true"
-# fi
-
 if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
