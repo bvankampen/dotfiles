@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version: 2
+final_space: true
+console_title_template: "{{ .Shell }} in {{ .Folder }}"
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: path
+        style: plain
+        foreground: p:gray
+        background: transparent
+        template: "{{ .Path }}"
+        properties:
+          style: full
+      - type: git
+        style: plain
+        foreground: p:cyan
+        background: transparent
+        template: " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
+          }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
+          (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
+          {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{
+          end }}"
+        properties:
+          branch_icon: ""
+          fetch_status: true
+    newline: true
+  - type: rprompt
+    segments:
+      - type: executiontime
+        style: plain
+        foreground: yellow
+        background: transparent
+        template: "{{ .FormattedMs }}"
+        properties:
+          threshold: 5000
+    overflow: hidden
+  - type: prompt
+    alignment: left
+    segments:
+      - type: text
+        style: plain
+        foreground_templates:
+          - "{{if gt .Code 0}}red{{end}}"
+          - "{{if eq .Code 0}}p:cyan{{end}}"
+        background: transparent
+        template: ❯
+    newline: true
+transient_prompt:
+  foreground_templates:
+    - "{{if gt .Code 0}}red{{end}}"
+    - "{{if eq .Code 0}}p:cyan{{end}}"
+  background: transparent
+  template: "❯ "
+secondary_prompt:
+  foreground: p:cyan
+  background: transparent
+  template: "❯❯ "
+palette:
+  grey: "#d7dbdb"
+  cyan: "#2a9d8f"
+  darkcyan: "#195e56"
