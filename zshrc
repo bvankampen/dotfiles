@@ -13,10 +13,10 @@ if [[ $ZPROF == 1 ]]; then
   zmodload zsh/zprof
 fi
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+#
 if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   export SESSION_TYPE="remote/ssh"
 else
@@ -118,17 +118,18 @@ fi
 # OH-MY-ZSH CONFIG
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
+#
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+#
 COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   history
   zsh-autosuggestions
-  tmux
   z
 )
+
+source $ZSH/oh-my-zsh.sh
 
 if [[ $VIRTENVWRAPPER == 1 ]]; then
   if command -v virtualenvwrapper.sh &> /dev/null; then
@@ -148,17 +149,6 @@ if [[ $TERM == 'xterm-kitty' ]]; then
     START_TMUX=0
 fi
 
-if [[ $XDG_SESSION_DESKTOP == 'sway' ]]; then
- START_TMUX=0
-fi
-
-if [[ $SESSION_TYPE != 'remote/ssh' && $START_TMUX == 1 ]]; then
-  ZSH_TMUX_AUTOSTART=true
-  ZSH_TMUX_AUTOCONNECT=false
-  #ZSH_TMUX_ITERM2=true
-fi
-
-source $ZSH/oh-my-zsh.sh
 
 # APPLICATIONS & AUTOCOMPLETES
 
@@ -217,18 +207,8 @@ if command -v vagrant &> /dev/null; then
   fpath=(/opt/vagrant/embedded/gems/2.2.19/gems/vagrant-2.2.19/contrib/zsh $fpath)
 fi
 
-# if [[ -f ~/.dotfiles/zsh/titles.plugin.zsh ]]; then
-  # source ~/.dotfiles/zsh/titles.plugin.zsh
-# fi
-
 if command -v helm &>/dev/null; then
   source <(helm completion zsh)
-fi
-
-if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 
@@ -266,7 +246,7 @@ if [[ $HOSTNAME == "xenon" ]]; then
   fi
 fi
 
-# ALIASES
+# FUNCTIONS
 
 ggg() {
     git add .
@@ -277,6 +257,12 @@ ggg() {
         git commit -m update
     fi
     git push
+}
+
+ggga() {
+  git add .
+  git commit --amend --no-edit
+  git push --force-with-lease
 }
 
 clicolors() {
@@ -292,8 +278,7 @@ clicolors() {
     c=''
 }
 
-if [[ $TERM == 1 ]]; then
-fi
+# ALIASES
 
 if command -v nvim &> /dev/null; then
   alias vim="nvim"
@@ -344,11 +329,10 @@ fi
 export PATH="/Users/bkampen/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 if [[ $ZPROF == 1 ]]; then
   zprof > $HOME/.zprof
 fi
-if command -v zoxide > /dev/null; then
-  eval "$(zoxide init zsh)"
+
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/ohmyposh/config.yaml)"
 fi

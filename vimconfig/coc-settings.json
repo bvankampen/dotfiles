@@ -1,6 +1,0 @@
-{
-      "suggest.autoTrigger": "none",
-      "pairs.enableCharacters": [],
-      "htmldjango.djlint.profile": "jinja",
-      "diagnostic.checkCurrentLine": true
-}

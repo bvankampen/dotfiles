@@ -19,11 +19,10 @@
 -- end
 --
 vim.filetype.add {
-  -- See above!
-  -- extension = {
-  --   yml = yaml_ft,
-  --   yaml = yaml_ft,
-  -- },
+  extension = {
+    -- yml = yaml_ft,
+    -- yaml = yaml_ft,
+  },
   pattern = {
     [".*/tasks/.*.yml"] = "yaml.ansible",
     [".*/playbooks/.*.yml"] = "yaml.ansible",
