@@ -118,6 +118,7 @@ fi
 # OH-MY-ZSH CONFIG
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export ZSH="$HOME/.oh-my-zsh"
+export DISABLE_AUTO_TITLE="true"
 #
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 #
