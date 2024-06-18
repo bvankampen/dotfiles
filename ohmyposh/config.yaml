@@ -3,8 +3,6 @@
 version: 2
 final_space: true
 console_title_template: "{{ if .Env.SSH_TTY }}{{ .UserName }}@{{ .HostName }}:{{ end }}{{ .PWD }}"
-console_title_template: "{{ .UserName }}@{{ .HostName }}:{{ .PWD }}"
-# console_title_template: "{{ .PWD }}"
 blocks:
   - type: prompt
     alignment: left
