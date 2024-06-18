@@ -16,8 +16,8 @@ end
 
 vim.filetype.add {
   extension = {
-    yml = yaml_ft,
-    yaml = yaml_ft,
+    -- yml = yaml_ft,
+    -- yaml = yaml_ft,
   },
   pattern = {
     [".*%.xml%.j2"] = "xml",
