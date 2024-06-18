@@ -9,9 +9,6 @@ blocks:
   - type: prompt
     alignment: left
     segments:
-      - type: session
-        style: plain
-        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}:{{ end }}"
       - type: path
         style: plain
         foreground: p:gray
@@ -34,6 +31,11 @@ blocks:
     newline: true
   - type: rprompt
     segments:
+      - type: session
+        style: plain
+        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}{{ end }}"
+        foreground: p:darkcyan
+        background: transparent
       - type: executiontime
         style: plain
         foreground: yellow
