@@ -9,7 +9,7 @@ blocks:
     segments:
       - type: session
         style: plain
-        template: "{{ if .SSHSession }}[{{ .HostName }}] {{ end }}"
+        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}:{{ end }}"
       - type: path
         style: plain
         foreground: p:gray
