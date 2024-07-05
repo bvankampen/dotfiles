@@ -221,6 +221,7 @@ if command -v tofu &> /dev/null; then
   alias tf=tofu
   alias tfa="tofu apply --auto-approve"
   alias tfd="tofu destroy --auto-approve"
+  alias tfp="tofu plan"
   complete -o nospace -C `which tofu` terraform
   complete -o nospace -C `which tofu` tf
 else
@@ -228,6 +229,7 @@ else
     alias tf=terraform
     alias tfa="terraform apply --auto-approve"
     alias tfd="terraform destroy --auto-approve"
+    alias tfp="terrafrom plan"
     complete -o nospace -C `which terraform` terraform
     complete -o nospace -C `which terraform` tf
   fi
@@ -249,6 +251,10 @@ if [[ $HOSTNAME == "xenon" ]]; then
   else
     export STATE=`cat $HOME/.config/.switch-state`
   fi
+fi
+
+if [[ -f ~/.local/aws.env ]]; then
+    source ~/.local/aws.env
 fi
 
 # FUNCTIONS

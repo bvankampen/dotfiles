@@ -29,9 +29,14 @@ blocks:
     newline: true
   - type: rprompt
     segments:
+      - type: python
+        style: plain
+        foreground: p:darkcyan
+        background: transparent
+        template: "{{ if .Venv }} {{ .Venv }}{{ end }} "
       - type: session
         style: plain
-        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}{{ end }}"
+        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}{{ end }} "
         foreground: p:darkcyan
         background: transparent
       - type: executiontime
