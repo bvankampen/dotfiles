@@ -1,7 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
 version: 2
-auto_upgrade: true
+auto_upgrade: false
+disable_notice: true
 final_space: true
 console_title_template: "{{ if .Env.SSH_TTY }}{{ .UserName }}@{{ .HostName }}:{{ end }}{{ .PWD }}"
 blocks:
