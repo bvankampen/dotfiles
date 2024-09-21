@@ -23,10 +23,6 @@ git config --global core.excludesfile $HOME/.dotfiles/gitignore
 
 # misc tools
 # sudo zypper install protobuf-devel
-<<<<<<< HEAD
-
-=======
->>>>>>> f2b1edcfb57445b4de3e1257f83d9f2a2bcf2f21
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install atuin
 cargo install tree-sitter-cli
