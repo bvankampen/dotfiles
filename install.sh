@@ -22,6 +22,7 @@ ln -s ~/.dotfiles/astronvim/ ~/.config/nvim
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
 
 # misc tools
+# sudo zypper install protobuf-devel
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install atuin
 cargo install tree-sitter-cli
