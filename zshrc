@@ -235,23 +235,23 @@ else
   fi
 fi
 
-if [[ $HOSTNAME == "xenon" && $START_TMUX == 1 ]]; then
-  if command -v tmux &> /dev/null; then
-    STATE=`cat $HOME/.config/.switch-state`
-    tmux set-environment -g SWSTATE ${STATE:u}
-  fi
-fi
-
-if [[ $HOSTNAME == "xenon" ]]; then
-  if [[ $START_TMUX == 1 ]]; then
-    if command -v tmux &> /dev/null; then
-      STATE=`cat $HOME/.config/.switch-state`
-      tmux set-environment -g SWSTATE ${STATE:u}
-    fi
-  else
-    export STATE=`cat $HOME/.config/.switch-state`
-  fi
-fi
+# if [[ $HOSTNAME == "xenon" && $START_TMUX == 1 ]]; then
+#   if command -v tmux &> /dev/null; then
+#     STATE=`cat $HOME/.config/.switch-state`
+#     tmux set-environment -g SWSTATE ${STATE:u}
+#   fi
+# fi
+#
+# if [[ $HOSTNAME == "xenon" ]]; then
+#   if [[ $START_TMUX == 1 ]]; then
+#     if command -v tmux &> /dev/null; then
+#       STATE=`cat $HOME/.config/.switch-state`
+#       tmux set-environment -g SWSTATE ${STATE:u}
+#     fi
+#   else
+#     export STATE=`cat $HOME/.config/.switch-state`
+#   fi
+# fi
 
 if [[ -f ~/.local/aws.env ]]; then
     source ~/.local/aws.env
