@@ -216,6 +216,10 @@ if command -v helm &>/dev/null; then
   source <(helm completion zsh)
 fi
 
+if command -v stern &>/dev/null; then
+  source <(stern --completion zsh)
+fi
+
 
 if command -v tofu &> /dev/null; then
   alias tf=tofu
