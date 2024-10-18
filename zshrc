@@ -216,6 +216,10 @@ if command -v helm &>/dev/null; then
   source <(helm completion zsh)
 fi
 
+if command -v stern &>/dev/null; then
+  source <(stern --completion zsh)
+fi
+
 
 if command -v tofu &> /dev/null; then
   alias tf=tofu
@@ -288,6 +292,19 @@ clicolors() {
     echo $c | sed 's/%//g' | sed 's/{//g' | sed 's/}//g' | sed '$s/..$//';
     c=''
 }
+
+# Auto activate python .venv
+python_venv() {
+  MYVENV=./.venv
+  # when you cd into a folder that contains $MYVENV
+  [[ -d $MYVENV ]] && source $MYVENV/bin/activate > /dev/null 2>&1
+  # when you cd into a folder that doesn't
+  [[ ! -d $MYVENV ]] && deactivate > /dev/null 2>&1
+}
+autoload -U add-zsh-hook
+add-zsh-hook chpwd python_venv
+
+python_venv
 
 # ALIASES
 

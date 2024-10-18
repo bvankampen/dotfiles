@@ -1,5 +1,6 @@
 # shell_integration no-title
 
+font_family IBM Plex Mono
 
 font_size 16.0
 
@@ -47,6 +48,6 @@ map shift+down move_window down
 include ${KITTY_OS}.conf
 
 # BEGIN_KITTY_THEME
-# Nightfox
+# Adwaita dark
 include current-theme.conf
 # END_KITTY_THEME
