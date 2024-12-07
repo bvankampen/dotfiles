@@ -16,7 +16,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.
 ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
 
 #astronvim
-ln -s ~/.dotfiles/astronvim/ ~/.config/nvim
+ln -sf ~/.dotfiles/astronvim/ ~/.config/nvim
+ln -sf ~/.dotfiles/kitty ~/.config/kitty
+ln -sf ~/.dotfiles/ohmyposh ~/.config/ohmyposh
 
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
