@@ -4,6 +4,7 @@ START_TMUX=1
 ZPROF=1
 PULUMI=0
 VIRTENVWRAPPER=0
+DISABLE_AUTO_UPDATE=true
 
 if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env

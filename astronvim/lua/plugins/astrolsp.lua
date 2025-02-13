@@ -47,22 +47,22 @@ return {
       yamlls = {
         settings = {
           yaml = {
-            validate = false
-          }
-        }
+            validate = false,
+          },
+        },
       },
       ansiblels = {
         settings = {
           ansible = {
             ansible = {
-              useFullyQualifiedCollectionNames = false,
+              useFullyQualifiedCollectionNames = true,
             },
             validation = {
-              lint = { enabled = false}
-            }
-          }
-        }
-      }
+              lint = { enabled = false },
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {

@@ -53,11 +53,11 @@ return {
   --   end,
   -- },
   --
-  {
-    "pcolladosoto/tinygo.nvim",
-    config = function() require("tinygo").setup() end,
-  },
-
+  -- {
+  --   "pcolladosoto/tinygo.nvim",
+  --   config = function() require("tinygo").setup() end,
+  -- },
+  --
   -- {
   --   "windwp/nvim-autopairs",
   --   config = function(plugin, opts)

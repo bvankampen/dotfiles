@@ -1,76 +1,79 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
-version: 2
-auto_upgrade: false
-disable_notice: true
-final_space: true
-console_title_template: "{{ if .Env.SSH_TTY }}{{ .UserName }}@{{ .HostName }}:{{ end }}{{ .PWD }}"
-blocks:
-  - type: prompt
-    alignment: left
-    segments:
-      - type: path
-        style: plain
-        foreground: p:gray
-        background: transparent
-        template: "{{ .Path }}"
-        properties:
-          style: full
-      - type: git
-        style: plain
-        foreground: p:cyan
-        background: transparent
-        template: " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
-          }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
-          (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
-          {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{
-          end }}"
-        properties:
-          branch_icon: ""
-          fetch_status: true
-    newline: true
-  - type: rprompt
-    segments:
-      - type: python
-        style: plain
-        foreground: p:darkcyan
-        background: transparent
-        template: "{{ if .Venv }} {{ .Venv }}{{ end }} "
-      - type: session
-        style: plain
-        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}{{ end }} "
-        foreground: p:darkcyan
-        background: transparent
-      - type: executiontime
-        style: plain
-        foreground: yellow
-        background: transparent
-        template: "{{ .FormattedMs }}"
-        properties:
-          threshold: 5000
-    overflow: hidden
-  - type: prompt
-    alignment: left
-    segments:
-      - type: text
-        style: plain
-        foreground_templates:
-          - "{{if gt .Code 0}}red{{end}}"
-          - "{{if eq .Code 0}}p:cyan{{end}}"
-        background: transparent
-        template: ❯
-    newline: true
-transient_prompt:
-  foreground_templates:
-    - "{{if gt .Code 0}}red{{end}}"
-    - "{{if eq .Code 0}}p:cyan{{end}}"
-  background: transparent
-  template: "❯ "
-secondary_prompt:
-  foreground: p:cyan
-  background: transparent
-  template: "❯❯ "
 palette:
-  grey: "#d7dbdb"
   cyan: "#2a9d8f"
   darkcyan: "#195e56"
+  grey: "#d7dbdb"
+secondary_prompt:
+  template: "❯❯ "
+  foreground: p:cyan
+  background: transparent
+transient_prompt:
+  template: "❯ "
+  background: transparent
+  foreground_templates:
+  - "{{if gt .Code 0}}red{{end}}"
+  - "{{if eq .Code 0}}p:cyan{{end}}"
+console_title_template: "{{ if .Env.SSH_TTY }}{{ .UserName }}@{{ .HostName }}:{{ end }}{{ .PWD }}"
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+      style: full
+    template: "{{ .Path }}"
+    foreground: p:gray
+    background: transparent
+    type: path
+    style: plain
+  - properties:
+      branch_icon: ""
+      cache_duration: none
+      fetch_status: true
+    template: " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf0c7 {{ .StashCount }}{{ end }}"
+    foreground: p:cyan
+    background: transparent
+    type: git
+    style: plain
+  newline: true
+- type: rprompt
+  overflow: hidden
+  segments:
+  - properties:
+      cache_duration: none
+    template: "{{ if .Venv }}\ue73c {{ .Venv }}{{ end }} "
+    foreground: p:darkcyan
+    background: transparent
+    type: python
+    style: plain
+  - properties:
+      cache_duration: none
+    template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}{{ end }} "
+    foreground: p:darkcyan
+    background: transparent
+    type: session
+    style: plain
+  - properties:
+      cache_duration: none
+      threshold: 5000
+    template: "{{ .FormattedMs }}"
+    foreground: yellow
+    background: transparent
+    type: executiontime
+    style: plain
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+    template: ❯
+    background: transparent
+    type: text
+    style: plain
+    foreground_templates:
+    - "{{if gt .Code 0}}red{{end}}"
+    - "{{if eq .Code 0}}p:cyan{{end}}"
+  newline: true
+version: 3
+final_space: true
