@@ -13,10 +13,13 @@ fi
 # oh-my-zsh config
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+
 
 #astronvim
-ln -s ~/.dotfiles/astronvim/ ~/.config/nvim
+ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
+ln -sf $HOME/.dotfiles/astronvim/ $HOME/.config/nvim
+ln -sf $HOME/.dotfiles/kitty $HOME/.config/kitty
+ln -sf $HOME/.dotfiles/ohmyposh $HOME/.config/ohmyposh
 
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
