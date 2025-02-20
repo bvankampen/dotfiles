@@ -10,6 +10,13 @@ if [[ `uname` = 'Linux' && -d /usr/lib/xsessions ]]; then
   fi
 fi
 
+
+if [[ $(uname) == "Linux" ]]; then
+  sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh
+  curl -s https://ohmyposh.dev/install.sh | bash -s
+fi
+
+
 # oh-my-zsh config
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -34,10 +41,6 @@ cargo install bottom
 cargo install lsd
 cargo install fd-find
 
-if [[ $(uname) == "Linux" ]]; then
-  sudo zypper install lazygit
-  curl -s https://ohmyposh.dev/install.sh | bash -s
-fi
 if [[ $(uname) == "Darwin "]]; then
   brew install lazygit
   brew install jandedobbeleer/oh-my-posh/oh-my-posh
