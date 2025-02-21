@@ -12,7 +12,7 @@ fi
 
 
 if [[ $(uname) == "Linux" ]]; then
-  sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh kitty silver-surfer
+  sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh kitty the_silver_searcher
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
