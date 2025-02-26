@@ -30,6 +30,7 @@ ln -sf $HOME/.dotfiles/ohmyposh $HOME/.config/ohmyposh
 
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
+git config --global core.filemode false
 
 # misc tools
 # sudo zypper install protobuf-devel
