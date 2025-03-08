@@ -12,7 +12,7 @@ fi
 
 
 if [[ $(uname) == "Linux" ]]; then
-  sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh kitty the_silver_searcher
+  sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh kitty the_silver_searcher bat btop
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
@@ -30,6 +30,7 @@ ln -sf $HOME/.dotfiles/ohmyposh $HOME/.config/ohmyposh
 
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
+git config --global core.filemode false
 
 # misc tools
 # sudo zypper install protobuf-devel
