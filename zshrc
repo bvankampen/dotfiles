@@ -94,10 +94,6 @@ if [[ -d $HOME/dev/scripts ]]; then
   export PATH=$PATH:$HOME/dev/scripts
 fi
 
-if [[ -d $HOME/.krew ]]; then
-  export PATH=$PATH:$HOME/.krew
-fi
-
 if [[ -d $HOME/.cargo/bin ]]; then
   export PATH=$PATH:$HOME/.cargo/bin
 fi
@@ -175,6 +171,10 @@ fi
 
 if command -v lsd &>/dev/null; then
   alias ls=lsd
+fi
+
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
 fi
 
 if command -v k3d &>/dev/null; then
