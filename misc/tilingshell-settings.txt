@@ -1,0 +1,14 @@
+[/]
+enable-move-keybindings=true
+enable-window-border=true
+focus-window-down=['<Shift><Super>Down']
+focus-window-left=['<Shift><Super>Left']
+focus-window-right=['<Shift><Super>Right']
+focus-window-up=['<Shift><Super>Up']
+inner-gaps=uint32 5
+move-window-center=['<Super>Return']
+outer-gaps=uint32 5
+quarter-tiling-threshold=uint32 10
+selected-layouts=[['15713948', '15970092', '15713948'], ['15713948', '15970092', '15713948']]
+window-border-color='rgb(154,153,150)'
+window-border-width=uint32 1
