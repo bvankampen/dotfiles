@@ -34,7 +34,7 @@ autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 
 # PATHS AND ENV VARS
-export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
+# export PATH=$PATH:$HOME/.local/bin:/usr/local/bin #redundant?
 
 if [[ $OS == "Darwin" ]]; then
   export PATH=$PATH:/opt/homebrew/opt/mysql-client/bin:
