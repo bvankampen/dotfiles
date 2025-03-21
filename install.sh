@@ -2,15 +2,6 @@
 
 cd $HOME
 
-# fonts
-if [[ `uname` = 'Linux' && -d /usr/lib/xsessions ]]; then
-  if [[ -d $HOME/.local/share/fonts ]]; then
-    cp -v $HOME/.dotfiles/fonts $HOME/.local/share/fonts
-    fc-cache -f
-  fi
-fi
-
-
 if [[ $(uname) == "Linux" ]]; then
   sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh kitty the_silver_searcher bat btop
   curl -s https://ohmyposh.dev/install.sh | bash -s
