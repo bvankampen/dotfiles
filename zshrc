@@ -197,6 +197,15 @@ if command -v atuin &>/dev/null; then
   eval "$(atuin init zsh --disable-up-arrow)"
 fi
 
+if [[ -f /etc/os-release ]]; then
+  ID=$(grep -m 1 ID /etc/os-release | awk -F "=" '{gsub(/"/, "", $2); print $2 }')
+  if [[ $ID == 'opensuse-tumbleweed' ]]; then
+    export ZYPP_PCK_PRELOAD=1
+    export ZYPP_CURL2=1
+  fi
+fi
+
+
 if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -238,6 +247,10 @@ else
     complete -o nospace -C `which terraform` terraform
     complete -o nospace -C `which terraform` tf
   fi
+fi
+
+if command -v terragrunt &> /dev/null; then
+  complete -o nospace -C /usr/bin/terragrunt terragrunt
 fi
 
 # if [[ $HOSTNAME == "xenon" && $START_TMUX == 1 ]]; then
