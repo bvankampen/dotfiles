@@ -230,6 +230,9 @@ if command -v stern &>/dev/null; then
   source <(stern --completion zsh)
 fi
 
+if command -v hauler &>/dev/null; then
+  . <(hauler completion zsh)
+fi
 
 if command -v tofu &> /dev/null; then
   alias tf=tofu
