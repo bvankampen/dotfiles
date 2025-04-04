@@ -14,10 +14,6 @@ if [[ $ZPROF == 1 ]]; then
   zmodload zsh/zprof
 fi
 
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-#
 if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   export SESSION_TYPE="remote/ssh"
 else
@@ -120,9 +116,7 @@ fi
 export ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 export ZSH="$HOME/.oh-my-zsh"
 export DISABLE_AUTO_TITLE="true"
-#
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-#
+
 COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
@@ -137,7 +131,6 @@ if [[ $VIRTENVWRAPPER == 1 ]]; then
   if command -v virtualenvwrapper.sh &> /dev/null; then
     export WORKON_HOME=$HOME/.local/venv
     export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-    # plugins=($plugins virtualenvwrapper)
       if [[ ! -d $WORKON_HOME ]]; then
         mkdir -p $WORKON_HOME
       fi
@@ -213,7 +206,6 @@ if [[ -f /opt/homebrew/opt/nvm/nvm.sh ]]; then
 fi
 
 if command -v aws &> /dev/null; then
-  # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
   complete -C '/opt/homebrew/bin/aws_completer' aws
   alias aws-lz='eval $(c9s creds aws --enable-desktop-notifications)'
 fi
@@ -363,11 +355,6 @@ fi
 
 if command -v minicom &> /dev/null; then
   alias minicom="minicom -m meta"
-fi
-
-if [[ $HOSTNAME == 'xenon' ]]; then
-  # special stuff for xenon
-  export PATH=$PATH:$HOME/Sync/work/code/scripts:$HOME/Sync/private/code/scripts
 fi
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
