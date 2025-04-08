@@ -357,6 +357,10 @@ if command -v minicom &> /dev/null; then
   alias minicom="minicom -m meta"
 fi
 
+if command -v rg &> /dev/null; then
+  alias ag="rg"
+fi
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/bkampen/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
