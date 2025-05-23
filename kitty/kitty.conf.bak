@@ -72,6 +72,6 @@ map ctrl+0 change_font_size all 0
 include ${KITTY_OS}.conf
 
 # BEGIN_KITTY_THEME
-# Nightfox
+# citylights
 include current-theme.conf
 # END_KITTY_THEME
