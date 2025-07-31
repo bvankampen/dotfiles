@@ -29,6 +29,7 @@ vim.filetype.add {
     [".*%.xml%.j2"] = "xml",
     [".*%.yml%.j2"] = "yaml",
     [".*%.yaml%.j2"] = "yaml",
+    [".*%.json%.j2"] = "json",
     [".*%.yaml%.tftpl"] = "tftpl.yaml",
     [".*%.json%.tftpl"] = "tftpl.json",
   },

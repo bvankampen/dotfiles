@@ -6,6 +6,8 @@ PULUMI=0
 VIRTENVWRAPPER=0
 DISABLE_AUTO_UPDATE=true
 
+export PATH=$PATH:$HOME/.local/bin
+
 if [[ -f ~/.local/local.env ]]; then
     source ~/.local/local.env
 fi
@@ -121,9 +123,11 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   history
-  zsh-autosuggestions
   z
 )
+
+# Removed:
+# zsh-autosuggestions
 
 source $ZSH/oh-my-zsh.sh
 
