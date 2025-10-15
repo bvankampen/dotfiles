@@ -23,6 +23,11 @@ ln -sf $HOME/.dotfiles/ohmyposh $HOME/.config/ohmyposh
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
 git config --global core.filemode false
 
+git config --global user.name "Bas van Kampen"
+
+git config --global user.email bas.vankampen@suse.com
+git config --global user.email bas@ping6.nl
+
 # misc tools
 # sudo zypper install protobuf-devel
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -37,6 +42,7 @@ if [[ $(uname) == "Darwin "]]; then
   brew install lazygit
   brew install jandedobbeleer/oh-my-posh/oh-my-posh
 fi
+
 
 # powerline10k
 # https://github.com/romkatv/powerlevel10
