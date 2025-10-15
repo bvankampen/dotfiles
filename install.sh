@@ -3,7 +3,7 @@
 cd $HOME
 
 if [[ $(uname) == "Linux" ]]; then
-  sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh kitty ripgrep bat btop
+  sudo zypper install lazygit neovim go1.23 nodejs npm htop git zsh kitty ripgrep bat btop hostname
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
