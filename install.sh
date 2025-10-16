@@ -22,6 +22,7 @@ ln -sf $HOME/.dotfiles/ohmyposh $HOME/.config/ohmyposh
 # Default gitignore
 git config --global core.excludesfile $HOME/.dotfiles/gitignore
 git config --global core.filemode false
+git config --global init.defaultBranch main
 
 git config --global user.name "Bas van Kampen"
 
