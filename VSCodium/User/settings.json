@@ -6,7 +6,7 @@
     "editor.formatOnPaste": true,
     "editor.fontFamily": "\"JetBrainsMono Nerd Font Mono\"",
     "editor.fontSize": 16,
-    "redhat.telemetry.enabled": true,
+    "redhat.telemetry.enabled": false,
     "vs-kubernetes": {
         "vs-kubernetes.crd-code-completion": "enabled"
     },
