@@ -44,6 +44,14 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      -- jinja_lsp = {
+      --   settings = {
+      --     jinja_lsp = {
+      --       filetypes = { "jinja", "html" },
+      --       hide_undefined = true,
+      --     },
+      --   },
+      -- },
       yamlls = {
         settings = {
           yaml = {

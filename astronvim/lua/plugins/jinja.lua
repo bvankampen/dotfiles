@@ -15,11 +15,11 @@ return {
     table.insert(opts.servers, "jinja_lsp")
     opts.config = require("astrocore").extend_tbl(opts.config or {}, {
       jinja_lsp = {
-        filetypes = { "jinja", "rust", "html" },
+        filetypes = { "jinja", "html" },
         root_dir = require("lspconfig.util").root_pattern("*.toml", ".git"),
-        settings = {
-          hide_undefined = true,
-        },
+        -- settings = {
+        hide_undefined = true,
+        -- },
       },
     })
   end,

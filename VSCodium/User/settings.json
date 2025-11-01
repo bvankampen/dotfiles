@@ -1,0 +1,23 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "workbench.colorTheme": "GitHub Dark Default",
+    "editor.formatOnPaste": true,
+    "editor.fontFamily": "\"JetBrainsMono Nerd Font Mono\"",
+    "editor.fontSize": 16,
+    "redhat.telemetry.enabled": true,
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "enabled"
+    },
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "workbench.editor.empty.hint": "hidden",
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.enabled": false,
+    "workbench.iconTheme": "vscode-icons",
+    "git.autofetch": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.fontLigatures": true,
+    "explorer.compactFolders": false,
+}
