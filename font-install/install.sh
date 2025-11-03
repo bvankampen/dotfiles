@@ -1,10 +1,10 @@
 #!/bin/bash
 
 FONTS=$(cat fontlist.txt)
-TMP=$(mktemp -d)
+FONTTMPDIR=$(mktemp -d)
 FONTDIR=$HOME/.local/share/fonts
-mkdir -p $TMP
-cd $TMP
+mkdir -p $FONTTMPDIR
+cd $FONTTMPDIR
 
 for FONT in $FONTS;do
  echo "Downloading: $FONT"
@@ -17,6 +17,7 @@ done
 
 mkdir -p $FONTDIR
 cp -v *.ttf $FONTDIR
+find . -iname "*.ttf" -exec cp {} $FONTDIR \;
 fc-cache -fv
 
-rm -rf $TMP
+rm -rf $FONTTMPDIR
