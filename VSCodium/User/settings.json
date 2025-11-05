@@ -20,4 +20,8 @@
     "vsicons.dontShowNewVersionMessage": true,
     "editor.fontLigatures": true,
     "explorer.compactFolders": false,
+    "ansible.lightspeed.enabled": false,
+    "ansible.lightspeed.suggestions.enabled": false,
+    "ansible.validation.lint.enabled": false,
+    "git.openRepositoryInParentFolders": "always",
 }
