@@ -24,4 +24,5 @@
     "ansible.lightspeed.suggestions.enabled": false,
     "ansible.validation.lint.enabled": false,
     "git.openRepositoryInParentFolders": "always",
+    "explorer.autoReveal": "focusNoScroll",
 }
